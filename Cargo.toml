@@ -1,0 +1,10 @@
+[workspace]
+resolver = "2"
+members = ["cli", "methods", "slh-dsa", "sha2-risc0"]
+
+# Always optimize; building and running the guest takes much longer without optimization.
+[profile.dev]
+opt-level = 3
+
+[profile.release]
+lto = true

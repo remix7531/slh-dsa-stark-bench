@@ -1,0 +1,598 @@
+$ bash demo/run.sh 1 && bash demo/run.sh 2 && bash demo/run.sh 4 && bash demo/run.sh 8 && bash demo/run.sh 16 && bash demo/run.sh 32 && bash demo/run.sh 64
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 1
+
+[1/5] $ keygen -n 1 -o secrets.json -p pubkeys.json -v
+Generated 1 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed 1 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  1
+  Verify time: 831us
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1484229 cycles
+All 1 signatures verified. Total cycles: 2103246, per signature: 2103246
+Proof time:  6m 24s
+Proof size:  223666 bytes (218.4 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  1
+  Proof size:  223666 bytes (218.4 KiB)
+  Verify time: 9.6ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 2
+
+[1/5] $ keygen -n 2 -o secrets.json -p pubkeys.json -v
+Generated 2 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed 2 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  2
+  Verify time: 1.3ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1419276 cycles
+Signature 2 verified in 1354251 cycles
+All 2 signatures verified. Total cycles: 4012479, per signature: 2006239
+Proof time:  12m 46s
+Proof size:  224194 bytes (218.9 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  2
+  Proof size:  224194 bytes (218.9 KiB)
+  Verify time: 11.2ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 4
+
+[1/5] $ keygen -n 4 -o secrets.json -p pubkeys.json -v
+Generated 4 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed 4 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  4
+  Verify time: 2.5ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1391447 cycles
+Signature 2 verified in 1456437 cycles
+Signature 3 verified in 1437828 cycles
+Signature 4 verified in 1530729 cycles
+All 4 signatures verified. Total cycles: 8297335, per signature: 2074333
+Proof time:  24m 32s
+Proof size:  225474 bytes (220.2 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  4
+  Proof size:  225474 bytes (220.2 KiB)
+  Verify time: 11.9ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 8
+
+[1/5] $ keygen -n 8 -o secrets.json -p pubkeys.json -v
+Generated 8 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed 8 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  8
+  Verify time: 4.7ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1465754 cycles
+Signature 2 verified in 1428565 cycles
+Signature 3 verified in 1484283 cycles
+Signature 4 verified in 1465648 cycles
+Signature 5 verified in 1419284 cycles
+Signature 6 verified in 1400716 cycles
+Signature 7 verified in 1540011 cycles
+Signature 8 verified in 1354781 cycles
+All 8 signatures verified. Total cycles: 16522488, per signature: 2065311
+Proof time:  47m 22s
+Proof size:  227890 bytes (222.5 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  8
+  Proof size:  227890 bytes (222.5 KiB)
+  Verify time: 9.6ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 16
+
+[1/5] $ keygen -n 16 -o secrets.json -p pubkeys.json -v
+Generated 16 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed 16 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  16
+  Verify time: 7.0ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1437872 cycles
+Signature 2 verified in 1475009 cycles
+Signature 3 verified in 1400739 cycles
+Signature 4 verified in 1465719 cycles
+Signature 5 verified in 1521361 cycles
+Signature 6 verified in 1409968 cycles
+Signature 7 verified in 1400730 cycles
+Signature 8 verified in 1428571 cycles
+Signature 9 verified in 1419261 cycles
+Signature 10 verified in 1530737 cycles
+Signature 11 verified in 1474973 cycles
+Signature 12 verified in 1456403 cycles
+Signature 13 verified in 1409989 cycles
+Signature 14 verified in 1437859 cycles
+Signature 15 verified in 1512134 cycles
+Signature 16 verified in 1382179 cycles
+All 16 signatures verified. Total cycles: 33086320, per signature: 2067895
+Proof time:  1h 35m 33s
+Proof size:  232090 bytes (226.7 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  16
+  Proof size:  232090 bytes (226.7 KiB)
+  Verify time: 12.3ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 32
+
+[1/5] $ keygen -n 32 -o secrets.json -p pubkeys.json -v
+Generated 32 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed 32 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  32
+  Verify time: 19.0ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1353587 cycles
+Signature 2 verified in 1474285 cycles
+Signature 3 verified in 1502146 cycles
+Signature 4 verified in 1455719 cycles
+Signature 5 verified in 1390722 cycles
+Signature 6 verified in 1390719 cycles
+Signature 7 verified in 1502145 cycles
+Signature 8 verified in 1474279 cycles
+Signature 9 verified in 1372136 cycles
+Signature 10 verified in 1464992 cycles
+Signature 11 verified in 1399994 cycles
+Signature 12 verified in 1474286 cycles
+Signature 13 verified in 1446418 cycles
+Signature 14 verified in 1437139 cycles
+Signature 15 verified in 1409284 cycles
+Signature 16 verified in 1372144 cycles
+Signature 17 verified in 1446431 cycles
+Signature 18 verified in 1567146 cycles
+Signature 19 verified in 1474268 cycles
+Signature 20 verified in 1362847 cycles
+Signature 21 verified in 1399984 cycles
+Signature 22 verified in 1427845 cycles
+Signature 23 verified in 1446421 cycles
+Signature 24 verified in 1437149 cycles
+Signature 25 verified in 1409272 cycles
+Signature 26 verified in 1427850 cycles
+Signature 27 verified in 1483546 cycles
+Signature 28 verified in 1455715 cycles
+Signature 29 verified in 1455701 cycles
+Signature 30 verified in 1437135 cycles
+Signature 31 verified in 1557849 cycles
+Signature 32 verified in 1492837 cycles
+All 32 signatures verified. Total cycles: 65973427, per signature: 2061669
+Proof time:  3h 10m 22s
+Proof size:  232906 bytes (227.4 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  32
+  Proof size:  232906 bytes (227.4 KiB)
+  Verify time: 9.4ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 64
+
+[1/5] $ keygen -n 64 -o secrets.json -p pubkeys.json -v
+Generated 64 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed message 33: "tx 33: proof curve shard"
+Signed message 34: "tx 34: prime secure lattice"
+Signed message 35: "tx 35: forge entropy quantum"
+Signed message 36: "tx 36: valid node commit"
+Signed message 37: "tx 37: stark bitcoin chain"
+Signed message 38: "tx 38: entropy digest epoch"
+Signed message 39: "tx 39: digest post cipher"
+Signed message 40: "tx 40: miner nonce future"
+Signed message 41: "tx 41: future miner oracle"
+Signed message 42: "tx 42: chain block block"
+Signed message 43: "tx 43: lattice oracle miner"
+Signed message 44: "tx 44: reveal future nonce"
+Signed message 45: "tx 45: state cipher post"
+Signed message 46: "tx 46: merkle epoch digest"
+Signed message 47: "tx 47: sign chain bitcoin"
+Signed message 48: "tx 48: curve commit node"
+Signed message 49: "tx 49: node quantum entropy"
+Signed message 50: "tx 50: post lattice secure"
+Signed message 51: "tx 51: block shard curve"
+Signed message 52: "tx 52: cipher proof stark"
+Signed message 53: "tx 53: commit reveal trust"
+Signed message 54: "tx 54: shard hash sign"
+Signed message 55: "tx 55: hash prime valid"
+Signed message 56: "tx 56: verify state field"
+Signed message 57: "tx 57: field verify merkle"
+Signed message 58: "tx 58: trust forge forge"
+Signed message 59: "tx 59: secure merkle verify"
+Signed message 60: "tx 60: bitcoin field state"
+Signed message 61: "tx 61: nonce valid prime"
+Signed message 62: "tx 62: oracle sign hash"
+Signed message 63: "tx 63: epoch trust reveal"
+Signed message 64: "tx 64: quantum stark proof"
+Signed 64 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+  Signature 33 valid
+  Signature 34 valid
+  Signature 35 valid
+  Signature 36 valid
+  Signature 37 valid
+  Signature 38 valid
+  Signature 39 valid
+  Signature 40 valid
+  Signature 41 valid
+  Signature 42 valid
+  Signature 43 valid
+  Signature 44 valid
+  Signature 45 valid
+  Signature 46 valid
+  Signature 47 valid
+  Signature 48 valid
+  Signature 49 valid
+  Signature 50 valid
+  Signature 51 valid
+  Signature 52 valid
+  Signature 53 valid
+  Signature 54 valid
+  Signature 55 valid
+  Signature 56 valid
+  Signature 57 valid
+  Signature 58 valid
+  Signature 59 valid
+  Signature 60 valid
+  Signature 61 valid
+  Signature 62 valid
+  Signature 63 valid
+  Signature 64 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  64
+  Verify time: 27.7ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1353587 cycles
+Signature 2 verified in 1474285 cycles
+Signature 3 verified in 1502146 cycles
+Signature 4 verified in 1455719 cycles
+Signature 5 verified in 1390722 cycles
+Signature 6 verified in 1390719 cycles
+Signature 7 verified in 1502145 cycles
+Signature 8 verified in 1474279 cycles
+Signature 9 verified in 1372136 cycles
+Signature 10 verified in 1464992 cycles
+Signature 11 verified in 1399994 cycles
+Signature 12 verified in 1474286 cycles
+Signature 13 verified in 1446418 cycles
+Signature 14 verified in 1437139 cycles
+Signature 15 verified in 1409284 cycles
+Signature 16 verified in 1372144 cycles
+Signature 17 verified in 1446431 cycles
+Signature 18 verified in 1567146 cycles
+Signature 19 verified in 1474268 cycles
+Signature 20 verified in 1362847 cycles
+Signature 21 verified in 1399984 cycles
+Signature 22 verified in 1427845 cycles
+Signature 23 verified in 1446421 cycles
+Signature 24 verified in 1437149 cycles
+Signature 25 verified in 1409272 cycles
+Signature 26 verified in 1427850 cycles
+Signature 27 verified in 1483546 cycles
+Signature 28 verified in 1455715 cycles
+Signature 29 verified in 1455701 cycles
+Signature 30 verified in 1437135 cycles
+Signature 31 verified in 1557849 cycles
+Signature 32 verified in 1492837 cycles
+Signature 33 verified in 1455693 cycles
+Signature 34 verified in 1427849 cycles
+Signature 35 verified in 1474269 cycles
+Signature 36 verified in 1455717 cycles
+Signature 37 verified in 1446414 cycles
+Signature 38 verified in 1483564 cycles
+Signature 39 verified in 1455704 cycles
+Signature 40 verified in 1474287 cycles
+Signature 41 verified in 1464982 cycles
+Signature 42 verified in 1381426 cycles
+Signature 43 verified in 1399988 cycles
+Signature 44 verified in 1502130 cycles
+Signature 45 verified in 1446426 cycles
+Signature 46 verified in 1483574 cycles
+Signature 47 verified in 1474274 cycles
+Signature 48 verified in 1437133 cycles
+Signature 49 verified in 1492851 cycles
+Signature 50 verified in 1594977 cycles
+Signature 51 verified in 1455693 cycles
+Signature 52 verified in 1455719 cycles
+Signature 53 verified in 1502125 cycles
+Signature 54 verified in 1418552 cycles
+Signature 55 verified in 1437135 cycles
+Signature 56 verified in 1437120 cycles
+Signature 57 verified in 1492838 cycles
+Signature 58 verified in 1520713 cycles
+Signature 59 verified in 1427852 cycles
+Signature 60 verified in 1427858 cycles
+Signature 61 verified in 1446431 cycles
+Signature 62 verified in 1409258 cycles
+Signature 63 verified in 1464996 cycles
+Signature 64 verified in 1418557 cycles
+All 64 signatures verified. Total cycles: 132411660, per signature: 2068932
+Proof time:  6h 8m 58s
+Proof size:  242634 bytes (236.9 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  64
+  Proof size:  242634 bytes (236.9 KiB)
+  Verify time: 13.0ms

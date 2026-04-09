@@ -1,0 +1,4 @@
+/target
+methods/guest/Cargo.lock
+demo/*.json
+demo/*.bin

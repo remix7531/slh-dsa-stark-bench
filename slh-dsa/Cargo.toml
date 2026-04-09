@@ -1,0 +1,14 @@
+[package]
+name = "slh-dsa"
+version = "0.1.0"
+edition = "2021"
+description = "SLH-DSA-SHA2-128s (SPHINCS+) implementation"
+
+[dependencies]
+sha2-risc0 = { path = "../sha2-risc0" }
+serde = { version = "1.0", features = ["derive"] }
+
+[features]
+default = []
+# Pass through to sha2-risc0's accelerator
+risc0 = ["sha2-risc0/risc0"]
