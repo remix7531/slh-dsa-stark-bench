@@ -34,10 +34,35 @@
         "type": "github"
       }
     },
+    "risc0pkgs": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": [
+          "rust-overlay"
+        ],
+        "treefmt-nix": "treefmt-nix"
+      },
+      "locked": {
+        "lastModified": 1775558423,
+        "narHash": "sha256-DtEAD1hAdPX3Xi/352wvwSZKZJGL+6jOQFo+nAu9xfU=",
+        "owner": "malda-protocol",
+        "repo": "risc0pkgs",
+        "rev": "f617e919816e1656341b920de92e67d42c4cdaf9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "malda-protocol",
+        "repo": "risc0pkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nixpkgs": "nixpkgs",
+        "risc0pkgs": "risc0pkgs",
         "rust-overlay": "rust-overlay"
       }
     },
@@ -73,6 +98,27 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "treefmt-nix": {
+      "inputs": {
+        "nixpkgs": [
+          "risc0pkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770228511,
+        "narHash": "sha256-wQ6NJSuFqAEmIg2VMnLdCnUc0b7vslUohqqGGD+Fyxk=",
+        "owner": "numtide",
+        "repo": "treefmt-nix",
+        "rev": "337a4fe074be1042a35086f15481d763b8ddc0e7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "treefmt-nix",
         "type": "github"
       }
     }

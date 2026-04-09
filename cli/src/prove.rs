@@ -82,6 +82,7 @@ fn main() -> ExitCode {
     // Build executor environment
     let n32 = n as u32;
     let mut env_builder = ExecutorEnv::builder();
+    env_builder.segment_limit_po2(22);
     env_builder.write(&n32).unwrap();
     for i in 0..n {
         env_builder.write(&msg_bytes[i]).unwrap();
