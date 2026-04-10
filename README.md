@@ -81,6 +81,20 @@ Dev mode (no real proof, for testing the pipeline):
 RISC0_DEV_MODE=1 bash demo/run.sh 8
 ```
 
+## Results
+
+Proving time scales linearly with N. Average per-signature proving time:
+
+- **AMD Ryzen 5 8640U** (CPU): ~544 s/sig (~9 min, at N=32)
+- **NVIDIA RTX 5090**: ~3.1 s/sig (at N=512)
+- **NVIDIA B200**: ~2.4 s/sig (at N=512)
+
+The proof is a constant ~219–454 KiB regardless of N, and STARK proof verification takes a constant ~12–15 ms.
+
+The B200 is only ~1.3× faster than the RTX 5090 despite being a significantly more expensive GPU. Profiling shows the workload is compute-bound rather than memory-bound, so the B200's larger memory (bandwidth) provides little advantage here.
+
+![Benchmark results](demo/bench-comparison.svg)
+
 ## License
 
 This project is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.html).

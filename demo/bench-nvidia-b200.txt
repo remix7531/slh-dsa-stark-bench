@@ -1,0 +1,3380 @@
+nohup: ignoring input
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 1
+
+[1/5] $ keygen -n 1 -o secrets.json -p pubkeys.json -v
+Generated 1 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed 1 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  1
+  Verify time: 484us
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+All 1 signatures verified. Total cycles: 2561112, per signature: 2561112
+Proof time:  4.2s
+Proof size:  223698 bytes (218.5 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  1
+  Proof size:  223698 bytes (218.5 KiB)
+  Verify time: 12.0ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 2
+
+[1/5] $ keygen -n 2 -o secrets.json -p pubkeys.json -v
+Generated 2 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed 2 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  2
+  Verify time: 853us
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+All 2 signatures verified. Total cycles: 5113800, per signature: 2556900
+Proof time:  6.5s
+Proof size:  224170 bytes (218.9 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  2
+  Proof size:  224170 bytes (218.9 KiB)
+  Verify time: 12.0ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 4
+
+[1/5] $ keygen -n 4 -o secrets.json -p pubkeys.json -v
+Generated 4 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed 4 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  4
+  Verify time: 1.7ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+All 4 signatures verified. Total cycles: 10210193, per signature: 2552548
+Proof time:  10.7s
+Proof size:  225098 bytes (219.8 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  4
+  Proof size:  225098 bytes (219.8 KiB)
+  Verify time: 11.9ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 8
+
+[1/5] $ keygen -n 8 -o secrets.json -p pubkeys.json -v
+Generated 8 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed 8 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  8
+  Verify time: 3.3ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+All 8 signatures verified. Total cycles: 20211763, per signature: 2526470
+Proof time:  19.5s
+Proof size:  226946 bytes (221.6 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  8
+  Proof size:  226946 bytes (221.6 KiB)
+  Verify time: 12.0ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 16
+
+[1/5] $ keygen -n 16 -o secrets.json -p pubkeys.json -v
+Generated 16 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed 16 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  16
+  Verify time: 6.6ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+All 16 signatures verified. Total cycles: 40380408, per signature: 2523775
+Proof time:  42.9s
+Proof size:  230666 bytes (225.3 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  16
+  Proof size:  230666 bytes (225.3 KiB)
+  Verify time: 11.9ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 32
+
+[1/5] $ keygen -n 32 -o secrets.json -p pubkeys.json -v
+Generated 32 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed 32 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  32
+  Verify time: 13.3ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+Signature 17 verified in 1389093 cycles
+Signature 18 verified in 1293534 cycles
+Signature 19 verified in 1354354 cycles
+Signature 20 verified in 1389072 cycles
+Signature 21 verified in 1363042 cycles
+Signature 22 verified in 1371726 cycles
+Signature 23 verified in 1371711 cycles
+Signature 24 verified in 1380399 cycles
+Signature 25 verified in 1276173 cycles
+Signature 26 verified in 1293546 cycles
+Signature 27 verified in 1354359 cycles
+Signature 28 verified in 1371731 cycles
+Signature 29 verified in 1406454 cycles
+Signature 30 verified in 1363026 cycles
+Signature 31 verified in 1336974 cycles
+Signature 32 verified in 1441201 cycles
+All 32 signatures verified. Total cycles: 81168960, per signature: 2536530
+Proof time:  1m 16s
+Proof size:  238082 bytes (232.5 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  32
+  Proof size:  238082 bytes (232.5 KiB)
+  Verify time: 11.9ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 64
+
+[1/5] $ keygen -n 64 -o secrets.json -p pubkeys.json -v
+Generated 64 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed message 33: "tx 33: proof curve shard"
+Signed message 34: "tx 34: prime secure lattice"
+Signed message 35: "tx 35: forge entropy quantum"
+Signed message 36: "tx 36: valid node commit"
+Signed message 37: "tx 37: stark bitcoin chain"
+Signed message 38: "tx 38: entropy digest epoch"
+Signed message 39: "tx 39: digest post cipher"
+Signed message 40: "tx 40: miner nonce future"
+Signed message 41: "tx 41: future miner oracle"
+Signed message 42: "tx 42: chain block block"
+Signed message 43: "tx 43: lattice oracle miner"
+Signed message 44: "tx 44: reveal future nonce"
+Signed message 45: "tx 45: state cipher post"
+Signed message 46: "tx 46: merkle epoch digest"
+Signed message 47: "tx 47: sign chain bitcoin"
+Signed message 48: "tx 48: curve commit node"
+Signed message 49: "tx 49: node quantum entropy"
+Signed message 50: "tx 50: post lattice secure"
+Signed message 51: "tx 51: block shard curve"
+Signed message 52: "tx 52: cipher proof stark"
+Signed message 53: "tx 53: commit reveal trust"
+Signed message 54: "tx 54: shard hash sign"
+Signed message 55: "tx 55: hash prime valid"
+Signed message 56: "tx 56: verify state field"
+Signed message 57: "tx 57: field verify merkle"
+Signed message 58: "tx 58: trust forge forge"
+Signed message 59: "tx 59: secure merkle verify"
+Signed message 60: "tx 60: bitcoin field state"
+Signed message 61: "tx 61: nonce valid prime"
+Signed message 62: "tx 62: oracle sign hash"
+Signed message 63: "tx 63: epoch trust reveal"
+Signed message 64: "tx 64: quantum stark proof"
+Signed 64 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+  Signature 33 valid
+  Signature 34 valid
+  Signature 35 valid
+  Signature 36 valid
+  Signature 37 valid
+  Signature 38 valid
+  Signature 39 valid
+  Signature 40 valid
+  Signature 41 valid
+  Signature 42 valid
+  Signature 43 valid
+  Signature 44 valid
+  Signature 45 valid
+  Signature 46 valid
+  Signature 47 valid
+  Signature 48 valid
+  Signature 49 valid
+  Signature 50 valid
+  Signature 51 valid
+  Signature 52 valid
+  Signature 53 valid
+  Signature 54 valid
+  Signature 55 valid
+  Signature 56 valid
+  Signature 57 valid
+  Signature 58 valid
+  Signature 59 valid
+  Signature 60 valid
+  Signature 61 valid
+  Signature 62 valid
+  Signature 63 valid
+  Signature 64 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  64
+  Verify time: 26.8ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+Signature 17 verified in 1389093 cycles
+Signature 18 verified in 1293534 cycles
+Signature 19 verified in 1354354 cycles
+Signature 20 verified in 1389072 cycles
+Signature 21 verified in 1363042 cycles
+Signature 22 verified in 1371726 cycles
+Signature 23 verified in 1371711 cycles
+Signature 24 verified in 1380399 cycles
+Signature 25 verified in 1276173 cycles
+Signature 26 verified in 1293546 cycles
+Signature 27 verified in 1354359 cycles
+Signature 28 verified in 1371731 cycles
+Signature 29 verified in 1406454 cycles
+Signature 30 verified in 1363026 cycles
+Signature 31 verified in 1336974 cycles
+Signature 32 verified in 1441201 cycles
+Signature 33 verified in 1345677 cycles
+Signature 34 verified in 1371725 cycles
+Signature 35 verified in 1363048 cycles
+Signature 36 verified in 1328277 cycles
+Signature 37 verified in 1328304 cycles
+Signature 38 verified in 1267501 cycles
+Signature 39 verified in 1328295 cycles
+Signature 40 verified in 1397782 cycles
+Signature 41 verified in 1371734 cycles
+Signature 42 verified in 1423820 cycles
+Signature 43 verified in 1319619 cycles
+Signature 44 verified in 1423844 cycles
+Signature 45 verified in 1345666 cycles
+Signature 46 verified in 1371723 cycles
+Signature 47 verified in 1380422 cycles
+Signature 48 verified in 1371726 cycles
+Signature 49 verified in 1319611 cycles
+Signature 50 verified in 1363044 cycles
+Signature 51 verified in 1380402 cycles
+Signature 52 verified in 1397795 cycles
+Signature 53 verified in 1363030 cycles
+Signature 54 verified in 1302216 cycles
+Signature 55 verified in 1415137 cycles
+Signature 56 verified in 1363028 cycles
+Signature 57 verified in 1389091 cycles
+Signature 58 verified in 1328294 cycles
+Signature 59 verified in 1293552 cycles
+Signature 60 verified in 1363039 cycles
+Signature 61 verified in 1415143 cycles
+Signature 62 verified in 1336957 cycles
+Signature 63 verified in 1371719 cycles
+Signature 64 verified in 1397770 cycles
+All 64 signatures verified. Total cycles: 162773588, per signature: 2543337
+Proof time:  2m 33s
+Proof size:  252986 bytes (247.1 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  64
+  Proof size:  252986 bytes (247.1 KiB)
+  Verify time: 11.9ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 128
+
+[1/5] $ keygen -n 128 -o secrets.json -p pubkeys.json -v
+Generated 128 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed message 33: "tx 33: proof curve shard"
+Signed message 34: "tx 34: prime secure lattice"
+Signed message 35: "tx 35: forge entropy quantum"
+Signed message 36: "tx 36: valid node commit"
+Signed message 37: "tx 37: stark bitcoin chain"
+Signed message 38: "tx 38: entropy digest epoch"
+Signed message 39: "tx 39: digest post cipher"
+Signed message 40: "tx 40: miner nonce future"
+Signed message 41: "tx 41: future miner oracle"
+Signed message 42: "tx 42: chain block block"
+Signed message 43: "tx 43: lattice oracle miner"
+Signed message 44: "tx 44: reveal future nonce"
+Signed message 45: "tx 45: state cipher post"
+Signed message 46: "tx 46: merkle epoch digest"
+Signed message 47: "tx 47: sign chain bitcoin"
+Signed message 48: "tx 48: curve commit node"
+Signed message 49: "tx 49: node quantum entropy"
+Signed message 50: "tx 50: post lattice secure"
+Signed message 51: "tx 51: block shard curve"
+Signed message 52: "tx 52: cipher proof stark"
+Signed message 53: "tx 53: commit reveal trust"
+Signed message 54: "tx 54: shard hash sign"
+Signed message 55: "tx 55: hash prime valid"
+Signed message 56: "tx 56: verify state field"
+Signed message 57: "tx 57: field verify merkle"
+Signed message 58: "tx 58: trust forge forge"
+Signed message 59: "tx 59: secure merkle verify"
+Signed message 60: "tx 60: bitcoin field state"
+Signed message 61: "tx 61: nonce valid prime"
+Signed message 62: "tx 62: oracle sign hash"
+Signed message 63: "tx 63: epoch trust reveal"
+Signed message 64: "tx 64: quantum stark proof"
+Signed message 65: "tx 65: proof curve shard"
+Signed message 66: "tx 66: prime secure lattice"
+Signed message 67: "tx 67: forge entropy quantum"
+Signed message 68: "tx 68: valid node commit"
+Signed message 69: "tx 69: stark bitcoin chain"
+Signed message 70: "tx 70: entropy digest epoch"
+Signed message 71: "tx 71: digest post cipher"
+Signed message 72: "tx 72: miner nonce future"
+Signed message 73: "tx 73: future miner oracle"
+Signed message 74: "tx 74: chain block block"
+Signed message 75: "tx 75: lattice oracle miner"
+Signed message 76: "tx 76: reveal future nonce"
+Signed message 77: "tx 77: state cipher post"
+Signed message 78: "tx 78: merkle epoch digest"
+Signed message 79: "tx 79: sign chain bitcoin"
+Signed message 80: "tx 80: curve commit node"
+Signed message 81: "tx 81: node quantum entropy"
+Signed message 82: "tx 82: post lattice secure"
+Signed message 83: "tx 83: block shard curve"
+Signed message 84: "tx 84: cipher proof stark"
+Signed message 85: "tx 85: commit reveal trust"
+Signed message 86: "tx 86: shard hash sign"
+Signed message 87: "tx 87: hash prime valid"
+Signed message 88: "tx 88: verify state field"
+Signed message 89: "tx 89: field verify merkle"
+Signed message 90: "tx 90: trust forge forge"
+Signed message 91: "tx 91: secure merkle verify"
+Signed message 92: "tx 92: bitcoin field state"
+Signed message 93: "tx 93: nonce valid prime"
+Signed message 94: "tx 94: oracle sign hash"
+Signed message 95: "tx 95: epoch trust reveal"
+Signed message 96: "tx 96: quantum stark proof"
+Signed message 97: "tx 97: proof curve shard"
+Signed message 98: "tx 98: prime secure lattice"
+Signed message 99: "tx 99: forge entropy quantum"
+Signed message 100: "tx 100: valid node commit"
+Signed message 101: "tx 101: stark bitcoin chain"
+Signed message 102: "tx 102: entropy digest epoch"
+Signed message 103: "tx 103: digest post cipher"
+Signed message 104: "tx 104: miner nonce future"
+Signed message 105: "tx 105: future miner oracle"
+Signed message 106: "tx 106: chain block block"
+Signed message 107: "tx 107: lattice oracle miner"
+Signed message 108: "tx 108: reveal future nonce"
+Signed message 109: "tx 109: state cipher post"
+Signed message 110: "tx 110: merkle epoch digest"
+Signed message 111: "tx 111: sign chain bitcoin"
+Signed message 112: "tx 112: curve commit node"
+Signed message 113: "tx 113: node quantum entropy"
+Signed message 114: "tx 114: post lattice secure"
+Signed message 115: "tx 115: block shard curve"
+Signed message 116: "tx 116: cipher proof stark"
+Signed message 117: "tx 117: commit reveal trust"
+Signed message 118: "tx 118: shard hash sign"
+Signed message 119: "tx 119: hash prime valid"
+Signed message 120: "tx 120: verify state field"
+Signed message 121: "tx 121: field verify merkle"
+Signed message 122: "tx 122: trust forge forge"
+Signed message 123: "tx 123: secure merkle verify"
+Signed message 124: "tx 124: bitcoin field state"
+Signed message 125: "tx 125: nonce valid prime"
+Signed message 126: "tx 126: oracle sign hash"
+Signed message 127: "tx 127: epoch trust reveal"
+Signed message 128: "tx 128: quantum stark proof"
+Signed 128 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+  Signature 33 valid
+  Signature 34 valid
+  Signature 35 valid
+  Signature 36 valid
+  Signature 37 valid
+  Signature 38 valid
+  Signature 39 valid
+  Signature 40 valid
+  Signature 41 valid
+  Signature 42 valid
+  Signature 43 valid
+  Signature 44 valid
+  Signature 45 valid
+  Signature 46 valid
+  Signature 47 valid
+  Signature 48 valid
+  Signature 49 valid
+  Signature 50 valid
+  Signature 51 valid
+  Signature 52 valid
+  Signature 53 valid
+  Signature 54 valid
+  Signature 55 valid
+  Signature 56 valid
+  Signature 57 valid
+  Signature 58 valid
+  Signature 59 valid
+  Signature 60 valid
+  Signature 61 valid
+  Signature 62 valid
+  Signature 63 valid
+  Signature 64 valid
+  Signature 65 valid
+  Signature 66 valid
+  Signature 67 valid
+  Signature 68 valid
+  Signature 69 valid
+  Signature 70 valid
+  Signature 71 valid
+  Signature 72 valid
+  Signature 73 valid
+  Signature 74 valid
+  Signature 75 valid
+  Signature 76 valid
+  Signature 77 valid
+  Signature 78 valid
+  Signature 79 valid
+  Signature 80 valid
+  Signature 81 valid
+  Signature 82 valid
+  Signature 83 valid
+  Signature 84 valid
+  Signature 85 valid
+  Signature 86 valid
+  Signature 87 valid
+  Signature 88 valid
+  Signature 89 valid
+  Signature 90 valid
+  Signature 91 valid
+  Signature 92 valid
+  Signature 93 valid
+  Signature 94 valid
+  Signature 95 valid
+  Signature 96 valid
+  Signature 97 valid
+  Signature 98 valid
+  Signature 99 valid
+  Signature 100 valid
+  Signature 101 valid
+  Signature 102 valid
+  Signature 103 valid
+  Signature 104 valid
+  Signature 105 valid
+  Signature 106 valid
+  Signature 107 valid
+  Signature 108 valid
+  Signature 109 valid
+  Signature 110 valid
+  Signature 111 valid
+  Signature 112 valid
+  Signature 113 valid
+  Signature 114 valid
+  Signature 115 valid
+  Signature 116 valid
+  Signature 117 valid
+  Signature 118 valid
+  Signature 119 valid
+  Signature 120 valid
+  Signature 121 valid
+  Signature 122 valid
+  Signature 123 valid
+  Signature 124 valid
+  Signature 125 valid
+  Signature 126 valid
+  Signature 127 valid
+  Signature 128 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  128
+  Verify time: 53.4ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+Signature 17 verified in 1389093 cycles
+Signature 18 verified in 1293534 cycles
+Signature 19 verified in 1354354 cycles
+Signature 20 verified in 1389072 cycles
+Signature 21 verified in 1363042 cycles
+Signature 22 verified in 1371726 cycles
+Signature 23 verified in 1371711 cycles
+Signature 24 verified in 1380399 cycles
+Signature 25 verified in 1276173 cycles
+Signature 26 verified in 1293546 cycles
+Signature 27 verified in 1354359 cycles
+Signature 28 verified in 1371731 cycles
+Signature 29 verified in 1406454 cycles
+Signature 30 verified in 1363026 cycles
+Signature 31 verified in 1336974 cycles
+Signature 32 verified in 1441201 cycles
+Signature 33 verified in 1345677 cycles
+Signature 34 verified in 1371725 cycles
+Signature 35 verified in 1363048 cycles
+Signature 36 verified in 1328277 cycles
+Signature 37 verified in 1328304 cycles
+Signature 38 verified in 1267501 cycles
+Signature 39 verified in 1328295 cycles
+Signature 40 verified in 1397782 cycles
+Signature 41 verified in 1371734 cycles
+Signature 42 verified in 1423820 cycles
+Signature 43 verified in 1319619 cycles
+Signature 44 verified in 1423844 cycles
+Signature 45 verified in 1345666 cycles
+Signature 46 verified in 1371723 cycles
+Signature 47 verified in 1380422 cycles
+Signature 48 verified in 1371726 cycles
+Signature 49 verified in 1319611 cycles
+Signature 50 verified in 1363044 cycles
+Signature 51 verified in 1380402 cycles
+Signature 52 verified in 1397795 cycles
+Signature 53 verified in 1363030 cycles
+Signature 54 verified in 1302216 cycles
+Signature 55 verified in 1415137 cycles
+Signature 56 verified in 1363028 cycles
+Signature 57 verified in 1389091 cycles
+Signature 58 verified in 1328294 cycles
+Signature 59 verified in 1293552 cycles
+Signature 60 verified in 1363039 cycles
+Signature 61 verified in 1415143 cycles
+Signature 62 verified in 1336957 cycles
+Signature 63 verified in 1371719 cycles
+Signature 64 verified in 1397770 cycles
+Signature 65 verified in 1423825 cycles
+Signature 66 verified in 1371732 cycles
+Signature 67 verified in 1406476 cycles
+Signature 68 verified in 1389085 cycles
+Signature 69 verified in 1293552 cycles
+Signature 70 verified in 1380403 cycles
+Signature 71 verified in 1345660 cycles
+Signature 72 verified in 1336986 cycles
+Signature 73 verified in 1345647 cycles
+Signature 74 verified in 1363040 cycles
+Signature 75 verified in 1345674 cycles
+Signature 76 verified in 1302233 cycles
+Signature 77 verified in 1276172 cycles
+Signature 78 verified in 1345662 cycles
+Signature 79 verified in 1328295 cycles
+Signature 80 verified in 1310898 cycles
+Signature 81 verified in 1302242 cycles
+Signature 82 verified in 1354338 cycles
+Signature 83 verified in 1432501 cycles
+Signature 84 verified in 1371724 cycles
+Signature 85 verified in 1328291 cycles
+Signature 86 verified in 1302229 cycles
+Signature 87 verified in 1354343 cycles
+Signature 88 verified in 1389092 cycles
+Signature 89 verified in 1423829 cycles
+Signature 90 verified in 1310919 cycles
+Signature 91 verified in 1310937 cycles
+Signature 92 verified in 1328285 cycles
+Signature 93 verified in 1302232 cycles
+Signature 94 verified in 1354335 cycles
+Signature 95 verified in 1406458 cycles
+Signature 96 verified in 1336982 cycles
+Signature 97 verified in 1336969 cycles
+Signature 98 verified in 1336995 cycles
+Signature 99 verified in 1345670 cycles
+Signature 100 verified in 1397783 cycles
+Signature 101 verified in 1441191 cycles
+Signature 102 verified in 1406468 cycles
+Signature 103 verified in 1328276 cycles
+Signature 104 verified in 1258811 cycles
+Signature 105 verified in 1310927 cycles
+Signature 106 verified in 1380405 cycles
+Signature 107 verified in 1406475 cycles
+Signature 108 verified in 1432523 cycles
+Signature 109 verified in 1441203 cycles
+Signature 110 verified in 1380410 cycles
+Signature 111 verified in 1371720 cycles
+Signature 112 verified in 1336995 cycles
+Signature 113 verified in 1328303 cycles
+Signature 114 verified in 1302246 cycles
+Signature 115 verified in 1336981 cycles
+Signature 116 verified in 1310928 cycles
+Signature 117 verified in 1319614 cycles
+Signature 118 verified in 1267495 cycles
+Signature 119 verified in 1345668 cycles
+Signature 120 verified in 1354347 cycles
+Signature 121 verified in 1336985 cycles
+Signature 122 verified in 1441199 cycles
+Signature 123 verified in 1363034 cycles
+Signature 124 verified in 1336984 cycles
+Signature 125 verified in 1258811 cycles
+Signature 126 verified in 1284850 cycles
+Signature 127 verified in 1293557 cycles
+Signature 128 verified in 1345664 cycles
+All 128 signatures verified. Total cycles: 325222892, per signature: 2540803
+Proof time:  5m 1s
+Proof size:  283026 bytes (276.4 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  128
+  Proof size:  283026 bytes (276.4 KiB)
+  Verify time: 12.5ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 256
+
+[1/5] $ keygen -n 256 -o secrets.json -p pubkeys.json -v
+Generated 256 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed message 33: "tx 33: proof curve shard"
+Signed message 34: "tx 34: prime secure lattice"
+Signed message 35: "tx 35: forge entropy quantum"
+Signed message 36: "tx 36: valid node commit"
+Signed message 37: "tx 37: stark bitcoin chain"
+Signed message 38: "tx 38: entropy digest epoch"
+Signed message 39: "tx 39: digest post cipher"
+Signed message 40: "tx 40: miner nonce future"
+Signed message 41: "tx 41: future miner oracle"
+Signed message 42: "tx 42: chain block block"
+Signed message 43: "tx 43: lattice oracle miner"
+Signed message 44: "tx 44: reveal future nonce"
+Signed message 45: "tx 45: state cipher post"
+Signed message 46: "tx 46: merkle epoch digest"
+Signed message 47: "tx 47: sign chain bitcoin"
+Signed message 48: "tx 48: curve commit node"
+Signed message 49: "tx 49: node quantum entropy"
+Signed message 50: "tx 50: post lattice secure"
+Signed message 51: "tx 51: block shard curve"
+Signed message 52: "tx 52: cipher proof stark"
+Signed message 53: "tx 53: commit reveal trust"
+Signed message 54: "tx 54: shard hash sign"
+Signed message 55: "tx 55: hash prime valid"
+Signed message 56: "tx 56: verify state field"
+Signed message 57: "tx 57: field verify merkle"
+Signed message 58: "tx 58: trust forge forge"
+Signed message 59: "tx 59: secure merkle verify"
+Signed message 60: "tx 60: bitcoin field state"
+Signed message 61: "tx 61: nonce valid prime"
+Signed message 62: "tx 62: oracle sign hash"
+Signed message 63: "tx 63: epoch trust reveal"
+Signed message 64: "tx 64: quantum stark proof"
+Signed message 65: "tx 65: proof curve shard"
+Signed message 66: "tx 66: prime secure lattice"
+Signed message 67: "tx 67: forge entropy quantum"
+Signed message 68: "tx 68: valid node commit"
+Signed message 69: "tx 69: stark bitcoin chain"
+Signed message 70: "tx 70: entropy digest epoch"
+Signed message 71: "tx 71: digest post cipher"
+Signed message 72: "tx 72: miner nonce future"
+Signed message 73: "tx 73: future miner oracle"
+Signed message 74: "tx 74: chain block block"
+Signed message 75: "tx 75: lattice oracle miner"
+Signed message 76: "tx 76: reveal future nonce"
+Signed message 77: "tx 77: state cipher post"
+Signed message 78: "tx 78: merkle epoch digest"
+Signed message 79: "tx 79: sign chain bitcoin"
+Signed message 80: "tx 80: curve commit node"
+Signed message 81: "tx 81: node quantum entropy"
+Signed message 82: "tx 82: post lattice secure"
+Signed message 83: "tx 83: block shard curve"
+Signed message 84: "tx 84: cipher proof stark"
+Signed message 85: "tx 85: commit reveal trust"
+Signed message 86: "tx 86: shard hash sign"
+Signed message 87: "tx 87: hash prime valid"
+Signed message 88: "tx 88: verify state field"
+Signed message 89: "tx 89: field verify merkle"
+Signed message 90: "tx 90: trust forge forge"
+Signed message 91: "tx 91: secure merkle verify"
+Signed message 92: "tx 92: bitcoin field state"
+Signed message 93: "tx 93: nonce valid prime"
+Signed message 94: "tx 94: oracle sign hash"
+Signed message 95: "tx 95: epoch trust reveal"
+Signed message 96: "tx 96: quantum stark proof"
+Signed message 97: "tx 97: proof curve shard"
+Signed message 98: "tx 98: prime secure lattice"
+Signed message 99: "tx 99: forge entropy quantum"
+Signed message 100: "tx 100: valid node commit"
+Signed message 101: "tx 101: stark bitcoin chain"
+Signed message 102: "tx 102: entropy digest epoch"
+Signed message 103: "tx 103: digest post cipher"
+Signed message 104: "tx 104: miner nonce future"
+Signed message 105: "tx 105: future miner oracle"
+Signed message 106: "tx 106: chain block block"
+Signed message 107: "tx 107: lattice oracle miner"
+Signed message 108: "tx 108: reveal future nonce"
+Signed message 109: "tx 109: state cipher post"
+Signed message 110: "tx 110: merkle epoch digest"
+Signed message 111: "tx 111: sign chain bitcoin"
+Signed message 112: "tx 112: curve commit node"
+Signed message 113: "tx 113: node quantum entropy"
+Signed message 114: "tx 114: post lattice secure"
+Signed message 115: "tx 115: block shard curve"
+Signed message 116: "tx 116: cipher proof stark"
+Signed message 117: "tx 117: commit reveal trust"
+Signed message 118: "tx 118: shard hash sign"
+Signed message 119: "tx 119: hash prime valid"
+Signed message 120: "tx 120: verify state field"
+Signed message 121: "tx 121: field verify merkle"
+Signed message 122: "tx 122: trust forge forge"
+Signed message 123: "tx 123: secure merkle verify"
+Signed message 124: "tx 124: bitcoin field state"
+Signed message 125: "tx 125: nonce valid prime"
+Signed message 126: "tx 126: oracle sign hash"
+Signed message 127: "tx 127: epoch trust reveal"
+Signed message 128: "tx 128: quantum stark proof"
+Signed message 129: "tx 129: proof curve shard"
+Signed message 130: "tx 130: prime secure lattice"
+Signed message 131: "tx 131: forge entropy quantum"
+Signed message 132: "tx 132: valid node commit"
+Signed message 133: "tx 133: stark bitcoin chain"
+Signed message 134: "tx 134: entropy digest epoch"
+Signed message 135: "tx 135: digest post cipher"
+Signed message 136: "tx 136: miner nonce future"
+Signed message 137: "tx 137: future miner oracle"
+Signed message 138: "tx 138: chain block block"
+Signed message 139: "tx 139: lattice oracle miner"
+Signed message 140: "tx 140: reveal future nonce"
+Signed message 141: "tx 141: state cipher post"
+Signed message 142: "tx 142: merkle epoch digest"
+Signed message 143: "tx 143: sign chain bitcoin"
+Signed message 144: "tx 144: curve commit node"
+Signed message 145: "tx 145: node quantum entropy"
+Signed message 146: "tx 146: post lattice secure"
+Signed message 147: "tx 147: block shard curve"
+Signed message 148: "tx 148: cipher proof stark"
+Signed message 149: "tx 149: commit reveal trust"
+Signed message 150: "tx 150: shard hash sign"
+Signed message 151: "tx 151: hash prime valid"
+Signed message 152: "tx 152: verify state field"
+Signed message 153: "tx 153: field verify merkle"
+Signed message 154: "tx 154: trust forge forge"
+Signed message 155: "tx 155: secure merkle verify"
+Signed message 156: "tx 156: bitcoin field state"
+Signed message 157: "tx 157: nonce valid prime"
+Signed message 158: "tx 158: oracle sign hash"
+Signed message 159: "tx 159: epoch trust reveal"
+Signed message 160: "tx 160: quantum stark proof"
+Signed message 161: "tx 161: proof curve shard"
+Signed message 162: "tx 162: prime secure lattice"
+Signed message 163: "tx 163: forge entropy quantum"
+Signed message 164: "tx 164: valid node commit"
+Signed message 165: "tx 165: stark bitcoin chain"
+Signed message 166: "tx 166: entropy digest epoch"
+Signed message 167: "tx 167: digest post cipher"
+Signed message 168: "tx 168: miner nonce future"
+Signed message 169: "tx 169: future miner oracle"
+Signed message 170: "tx 170: chain block block"
+Signed message 171: "tx 171: lattice oracle miner"
+Signed message 172: "tx 172: reveal future nonce"
+Signed message 173: "tx 173: state cipher post"
+Signed message 174: "tx 174: merkle epoch digest"
+Signed message 175: "tx 175: sign chain bitcoin"
+Signed message 176: "tx 176: curve commit node"
+Signed message 177: "tx 177: node quantum entropy"
+Signed message 178: "tx 178: post lattice secure"
+Signed message 179: "tx 179: block shard curve"
+Signed message 180: "tx 180: cipher proof stark"
+Signed message 181: "tx 181: commit reveal trust"
+Signed message 182: "tx 182: shard hash sign"
+Signed message 183: "tx 183: hash prime valid"
+Signed message 184: "tx 184: verify state field"
+Signed message 185: "tx 185: field verify merkle"
+Signed message 186: "tx 186: trust forge forge"
+Signed message 187: "tx 187: secure merkle verify"
+Signed message 188: "tx 188: bitcoin field state"
+Signed message 189: "tx 189: nonce valid prime"
+Signed message 190: "tx 190: oracle sign hash"
+Signed message 191: "tx 191: epoch trust reveal"
+Signed message 192: "tx 192: quantum stark proof"
+Signed message 193: "tx 193: proof curve shard"
+Signed message 194: "tx 194: prime secure lattice"
+Signed message 195: "tx 195: forge entropy quantum"
+Signed message 196: "tx 196: valid node commit"
+Signed message 197: "tx 197: stark bitcoin chain"
+Signed message 198: "tx 198: entropy digest epoch"
+Signed message 199: "tx 199: digest post cipher"
+Signed message 200: "tx 200: miner nonce future"
+Signed message 201: "tx 201: future miner oracle"
+Signed message 202: "tx 202: chain block block"
+Signed message 203: "tx 203: lattice oracle miner"
+Signed message 204: "tx 204: reveal future nonce"
+Signed message 205: "tx 205: state cipher post"
+Signed message 206: "tx 206: merkle epoch digest"
+Signed message 207: "tx 207: sign chain bitcoin"
+Signed message 208: "tx 208: curve commit node"
+Signed message 209: "tx 209: node quantum entropy"
+Signed message 210: "tx 210: post lattice secure"
+Signed message 211: "tx 211: block shard curve"
+Signed message 212: "tx 212: cipher proof stark"
+Signed message 213: "tx 213: commit reveal trust"
+Signed message 214: "tx 214: shard hash sign"
+Signed message 215: "tx 215: hash prime valid"
+Signed message 216: "tx 216: verify state field"
+Signed message 217: "tx 217: field verify merkle"
+Signed message 218: "tx 218: trust forge forge"
+Signed message 219: "tx 219: secure merkle verify"
+Signed message 220: "tx 220: bitcoin field state"
+Signed message 221: "tx 221: nonce valid prime"
+Signed message 222: "tx 222: oracle sign hash"
+Signed message 223: "tx 223: epoch trust reveal"
+Signed message 224: "tx 224: quantum stark proof"
+Signed message 225: "tx 225: proof curve shard"
+Signed message 226: "tx 226: prime secure lattice"
+Signed message 227: "tx 227: forge entropy quantum"
+Signed message 228: "tx 228: valid node commit"
+Signed message 229: "tx 229: stark bitcoin chain"
+Signed message 230: "tx 230: entropy digest epoch"
+Signed message 231: "tx 231: digest post cipher"
+Signed message 232: "tx 232: miner nonce future"
+Signed message 233: "tx 233: future miner oracle"
+Signed message 234: "tx 234: chain block block"
+Signed message 235: "tx 235: lattice oracle miner"
+Signed message 236: "tx 236: reveal future nonce"
+Signed message 237: "tx 237: state cipher post"
+Signed message 238: "tx 238: merkle epoch digest"
+Signed message 239: "tx 239: sign chain bitcoin"
+Signed message 240: "tx 240: curve commit node"
+Signed message 241: "tx 241: node quantum entropy"
+Signed message 242: "tx 242: post lattice secure"
+Signed message 243: "tx 243: block shard curve"
+Signed message 244: "tx 244: cipher proof stark"
+Signed message 245: "tx 245: commit reveal trust"
+Signed message 246: "tx 246: shard hash sign"
+Signed message 247: "tx 247: hash prime valid"
+Signed message 248: "tx 248: verify state field"
+Signed message 249: "tx 249: field verify merkle"
+Signed message 250: "tx 250: trust forge forge"
+Signed message 251: "tx 251: secure merkle verify"
+Signed message 252: "tx 252: bitcoin field state"
+Signed message 253: "tx 253: nonce valid prime"
+Signed message 254: "tx 254: oracle sign hash"
+Signed message 255: "tx 255: epoch trust reveal"
+Signed message 256: "tx 256: quantum stark proof"
+Signed 256 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+  Signature 33 valid
+  Signature 34 valid
+  Signature 35 valid
+  Signature 36 valid
+  Signature 37 valid
+  Signature 38 valid
+  Signature 39 valid
+  Signature 40 valid
+  Signature 41 valid
+  Signature 42 valid
+  Signature 43 valid
+  Signature 44 valid
+  Signature 45 valid
+  Signature 46 valid
+  Signature 47 valid
+  Signature 48 valid
+  Signature 49 valid
+  Signature 50 valid
+  Signature 51 valid
+  Signature 52 valid
+  Signature 53 valid
+  Signature 54 valid
+  Signature 55 valid
+  Signature 56 valid
+  Signature 57 valid
+  Signature 58 valid
+  Signature 59 valid
+  Signature 60 valid
+  Signature 61 valid
+  Signature 62 valid
+  Signature 63 valid
+  Signature 64 valid
+  Signature 65 valid
+  Signature 66 valid
+  Signature 67 valid
+  Signature 68 valid
+  Signature 69 valid
+  Signature 70 valid
+  Signature 71 valid
+  Signature 72 valid
+  Signature 73 valid
+  Signature 74 valid
+  Signature 75 valid
+  Signature 76 valid
+  Signature 77 valid
+  Signature 78 valid
+  Signature 79 valid
+  Signature 80 valid
+  Signature 81 valid
+  Signature 82 valid
+  Signature 83 valid
+  Signature 84 valid
+  Signature 85 valid
+  Signature 86 valid
+  Signature 87 valid
+  Signature 88 valid
+  Signature 89 valid
+  Signature 90 valid
+  Signature 91 valid
+  Signature 92 valid
+  Signature 93 valid
+  Signature 94 valid
+  Signature 95 valid
+  Signature 96 valid
+  Signature 97 valid
+  Signature 98 valid
+  Signature 99 valid
+  Signature 100 valid
+  Signature 101 valid
+  Signature 102 valid
+  Signature 103 valid
+  Signature 104 valid
+  Signature 105 valid
+  Signature 106 valid
+  Signature 107 valid
+  Signature 108 valid
+  Signature 109 valid
+  Signature 110 valid
+  Signature 111 valid
+  Signature 112 valid
+  Signature 113 valid
+  Signature 114 valid
+  Signature 115 valid
+  Signature 116 valid
+  Signature 117 valid
+  Signature 118 valid
+  Signature 119 valid
+  Signature 120 valid
+  Signature 121 valid
+  Signature 122 valid
+  Signature 123 valid
+  Signature 124 valid
+  Signature 125 valid
+  Signature 126 valid
+  Signature 127 valid
+  Signature 128 valid
+  Signature 129 valid
+  Signature 130 valid
+  Signature 131 valid
+  Signature 132 valid
+  Signature 133 valid
+  Signature 134 valid
+  Signature 135 valid
+  Signature 136 valid
+  Signature 137 valid
+  Signature 138 valid
+  Signature 139 valid
+  Signature 140 valid
+  Signature 141 valid
+  Signature 142 valid
+  Signature 143 valid
+  Signature 144 valid
+  Signature 145 valid
+  Signature 146 valid
+  Signature 147 valid
+  Signature 148 valid
+  Signature 149 valid
+  Signature 150 valid
+  Signature 151 valid
+  Signature 152 valid
+  Signature 153 valid
+  Signature 154 valid
+  Signature 155 valid
+  Signature 156 valid
+  Signature 157 valid
+  Signature 158 valid
+  Signature 159 valid
+  Signature 160 valid
+  Signature 161 valid
+  Signature 162 valid
+  Signature 163 valid
+  Signature 164 valid
+  Signature 165 valid
+  Signature 166 valid
+  Signature 167 valid
+  Signature 168 valid
+  Signature 169 valid
+  Signature 170 valid
+  Signature 171 valid
+  Signature 172 valid
+  Signature 173 valid
+  Signature 174 valid
+  Signature 175 valid
+  Signature 176 valid
+  Signature 177 valid
+  Signature 178 valid
+  Signature 179 valid
+  Signature 180 valid
+  Signature 181 valid
+  Signature 182 valid
+  Signature 183 valid
+  Signature 184 valid
+  Signature 185 valid
+  Signature 186 valid
+  Signature 187 valid
+  Signature 188 valid
+  Signature 189 valid
+  Signature 190 valid
+  Signature 191 valid
+  Signature 192 valid
+  Signature 193 valid
+  Signature 194 valid
+  Signature 195 valid
+  Signature 196 valid
+  Signature 197 valid
+  Signature 198 valid
+  Signature 199 valid
+  Signature 200 valid
+  Signature 201 valid
+  Signature 202 valid
+  Signature 203 valid
+  Signature 204 valid
+  Signature 205 valid
+  Signature 206 valid
+  Signature 207 valid
+  Signature 208 valid
+  Signature 209 valid
+  Signature 210 valid
+  Signature 211 valid
+  Signature 212 valid
+  Signature 213 valid
+  Signature 214 valid
+  Signature 215 valid
+  Signature 216 valid
+  Signature 217 valid
+  Signature 218 valid
+  Signature 219 valid
+  Signature 220 valid
+  Signature 221 valid
+  Signature 222 valid
+  Signature 223 valid
+  Signature 224 valid
+  Signature 225 valid
+  Signature 226 valid
+  Signature 227 valid
+  Signature 228 valid
+  Signature 229 valid
+  Signature 230 valid
+  Signature 231 valid
+  Signature 232 valid
+  Signature 233 valid
+  Signature 234 valid
+  Signature 235 valid
+  Signature 236 valid
+  Signature 237 valid
+  Signature 238 valid
+  Signature 239 valid
+  Signature 240 valid
+  Signature 241 valid
+  Signature 242 valid
+  Signature 243 valid
+  Signature 244 valid
+  Signature 245 valid
+  Signature 246 valid
+  Signature 247 valid
+  Signature 248 valid
+  Signature 249 valid
+  Signature 250 valid
+  Signature 251 valid
+  Signature 252 valid
+  Signature 253 valid
+  Signature 254 valid
+  Signature 255 valid
+  Signature 256 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  256
+  Verify time: 107.8ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+Signature 17 verified in 1389093 cycles
+Signature 18 verified in 1293534 cycles
+Signature 19 verified in 1354354 cycles
+Signature 20 verified in 1389072 cycles
+Signature 21 verified in 1363042 cycles
+Signature 22 verified in 1371726 cycles
+Signature 23 verified in 1371711 cycles
+Signature 24 verified in 1380399 cycles
+Signature 25 verified in 1276173 cycles
+Signature 26 verified in 1293546 cycles
+Signature 27 verified in 1354359 cycles
+Signature 28 verified in 1371731 cycles
+Signature 29 verified in 1406454 cycles
+Signature 30 verified in 1363026 cycles
+Signature 31 verified in 1336974 cycles
+Signature 32 verified in 1441201 cycles
+Signature 33 verified in 1345677 cycles
+Signature 34 verified in 1371725 cycles
+Signature 35 verified in 1363048 cycles
+Signature 36 verified in 1328277 cycles
+Signature 37 verified in 1328304 cycles
+Signature 38 verified in 1267501 cycles
+Signature 39 verified in 1328295 cycles
+Signature 40 verified in 1397782 cycles
+Signature 41 verified in 1371734 cycles
+Signature 42 verified in 1423820 cycles
+Signature 43 verified in 1319619 cycles
+Signature 44 verified in 1423844 cycles
+Signature 45 verified in 1345666 cycles
+Signature 46 verified in 1371723 cycles
+Signature 47 verified in 1380422 cycles
+Signature 48 verified in 1371726 cycles
+Signature 49 verified in 1319611 cycles
+Signature 50 verified in 1363044 cycles
+Signature 51 verified in 1380402 cycles
+Signature 52 verified in 1397795 cycles
+Signature 53 verified in 1363030 cycles
+Signature 54 verified in 1302216 cycles
+Signature 55 verified in 1415137 cycles
+Signature 56 verified in 1363028 cycles
+Signature 57 verified in 1389091 cycles
+Signature 58 verified in 1328294 cycles
+Signature 59 verified in 1293552 cycles
+Signature 60 verified in 1363039 cycles
+Signature 61 verified in 1415143 cycles
+Signature 62 verified in 1336957 cycles
+Signature 63 verified in 1371719 cycles
+Signature 64 verified in 1397770 cycles
+Signature 65 verified in 1423825 cycles
+Signature 66 verified in 1371732 cycles
+Signature 67 verified in 1406476 cycles
+Signature 68 verified in 1389085 cycles
+Signature 69 verified in 1293552 cycles
+Signature 70 verified in 1380403 cycles
+Signature 71 verified in 1345660 cycles
+Signature 72 verified in 1336986 cycles
+Signature 73 verified in 1345647 cycles
+Signature 74 verified in 1363040 cycles
+Signature 75 verified in 1345674 cycles
+Signature 76 verified in 1302233 cycles
+Signature 77 verified in 1276172 cycles
+Signature 78 verified in 1345662 cycles
+Signature 79 verified in 1328295 cycles
+Signature 80 verified in 1310898 cycles
+Signature 81 verified in 1302242 cycles
+Signature 82 verified in 1354338 cycles
+Signature 83 verified in 1432501 cycles
+Signature 84 verified in 1371724 cycles
+Signature 85 verified in 1328291 cycles
+Signature 86 verified in 1302229 cycles
+Signature 87 verified in 1354343 cycles
+Signature 88 verified in 1389092 cycles
+Signature 89 verified in 1423829 cycles
+Signature 90 verified in 1310919 cycles
+Signature 91 verified in 1310937 cycles
+Signature 92 verified in 1328285 cycles
+Signature 93 verified in 1302232 cycles
+Signature 94 verified in 1354335 cycles
+Signature 95 verified in 1406458 cycles
+Signature 96 verified in 1336982 cycles
+Signature 97 verified in 1336969 cycles
+Signature 98 verified in 1336995 cycles
+Signature 99 verified in 1345670 cycles
+Signature 100 verified in 1397783 cycles
+Signature 101 verified in 1441191 cycles
+Signature 102 verified in 1406468 cycles
+Signature 103 verified in 1328276 cycles
+Signature 104 verified in 1258811 cycles
+Signature 105 verified in 1310927 cycles
+Signature 106 verified in 1380405 cycles
+Signature 107 verified in 1406475 cycles
+Signature 108 verified in 1432523 cycles
+Signature 109 verified in 1441203 cycles
+Signature 110 verified in 1380410 cycles
+Signature 111 verified in 1371720 cycles
+Signature 112 verified in 1336995 cycles
+Signature 113 verified in 1328303 cycles
+Signature 114 verified in 1302246 cycles
+Signature 115 verified in 1336981 cycles
+Signature 116 verified in 1310928 cycles
+Signature 117 verified in 1319614 cycles
+Signature 118 verified in 1267495 cycles
+Signature 119 verified in 1345668 cycles
+Signature 120 verified in 1354347 cycles
+Signature 121 verified in 1336985 cycles
+Signature 122 verified in 1441199 cycles
+Signature 123 verified in 1363034 cycles
+Signature 124 verified in 1336984 cycles
+Signature 125 verified in 1258811 cycles
+Signature 126 verified in 1284850 cycles
+Signature 127 verified in 1293557 cycles
+Signature 128 verified in 1345664 cycles
+Signature 129 verified in 1363034 cycles
+Signature 130 verified in 1389107 cycles
+Signature 131 verified in 1380410 cycles
+Signature 132 verified in 1336990 cycles
+Signature 133 verified in 1328295 cycles
+Signature 134 verified in 1406480 cycles
+Signature 135 verified in 1328293 cycles
+Signature 136 verified in 1423827 cycles
+Signature 137 verified in 1423828 cycles
+Signature 138 verified in 1345667 cycles
+Signature 139 verified in 1363066 cycles
+Signature 140 verified in 1389118 cycles
+Signature 141 verified in 1302246 cycles
+Signature 142 verified in 1371721 cycles
+Signature 143 verified in 1389099 cycles
+Signature 144 verified in 1380407 cycles
+Signature 145 verified in 1310942 cycles
+Signature 146 verified in 1241434 cycles
+Signature 147 verified in 1336987 cycles
+Signature 148 verified in 1345674 cycles
+Signature 149 verified in 1284873 cycles
+Signature 150 verified in 1328286 cycles
+Signature 151 verified in 1284866 cycles
+Signature 152 verified in 1336986 cycles
+Signature 153 verified in 1345663 cycles
+Signature 154 verified in 1293557 cycles
+Signature 155 verified in 1354353 cycles
+Signature 156 verified in 1328302 cycles
+Signature 157 verified in 1380403 cycles
+Signature 158 verified in 1354344 cycles
+Signature 159 verified in 1449884 cycles
+Signature 160 verified in 1441209 cycles
+Signature 161 verified in 1363043 cycles
+Signature 162 verified in 1302258 cycles
+Signature 163 verified in 1345673 cycles
+Signature 164 verified in 1293550 cycles
+Signature 165 verified in 1354366 cycles
+Signature 166 verified in 1328289 cycles
+Signature 167 verified in 1371702 cycles
+Signature 168 verified in 1336983 cycles
+Signature 169 verified in 1406471 cycles
+Signature 170 verified in 1354347 cycles
+Signature 171 verified in 1354353 cycles
+Signature 172 verified in 1276185 cycles
+Signature 173 verified in 1336972 cycles
+Signature 174 verified in 1328301 cycles
+Signature 175 verified in 1328289 cycles
+Signature 176 verified in 1371710 cycles
+Signature 177 verified in 1380409 cycles
+Signature 178 verified in 1354364 cycles
+Signature 179 verified in 1310923 cycles
+Signature 180 verified in 1328284 cycles
+Signature 181 verified in 1328284 cycles
+Signature 182 verified in 1354339 cycles
+Signature 183 verified in 1310932 cycles
+Signature 184 verified in 1284871 cycles
+Signature 185 verified in 1267504 cycles
+Signature 186 verified in 1363030 cycles
+Signature 187 verified in 1415157 cycles
+Signature 188 verified in 1276190 cycles
+Signature 189 verified in 1302228 cycles
+Signature 190 verified in 1449886 cycles
+Signature 191 verified in 1423839 cycles
+Signature 192 verified in 1345668 cycles
+Signature 193 verified in 1389100 cycles
+Signature 194 verified in 1371719 cycles
+Signature 195 verified in 1302243 cycles
+Signature 196 verified in 1293547 cycles
+Signature 197 verified in 1380404 cycles
+Signature 198 verified in 1284881 cycles
+Signature 199 verified in 1371723 cycles
+Signature 200 verified in 1328297 cycles
+Signature 201 verified in 1397779 cycles
+Signature 202 verified in 1319612 cycles
+Signature 203 verified in 1345683 cycles
+Signature 204 verified in 1415145 cycles
+Signature 205 verified in 1415142 cycles
+Signature 206 verified in 1319605 cycles
+Signature 207 verified in 1354351 cycles
+Signature 208 verified in 1302239 cycles
+Signature 209 verified in 1415162 cycles
+Signature 210 verified in 1363039 cycles
+Signature 211 verified in 1397772 cycles
+Signature 212 verified in 1336998 cycles
+Signature 213 verified in 1371725 cycles
+Signature 214 verified in 1310906 cycles
+Signature 215 verified in 1371714 cycles
+Signature 216 verified in 1310930 cycles
+Signature 217 verified in 1449887 cycles
+Signature 218 verified in 1345660 cycles
+Signature 219 verified in 1293553 cycles
+Signature 220 verified in 1336989 cycles
+Signature 221 verified in 1345649 cycles
+Signature 222 verified in 1336975 cycles
+Signature 223 verified in 1415155 cycles
+Signature 224 verified in 1354350 cycles
+Signature 225 verified in 1389081 cycles
+Signature 226 verified in 1319629 cycles
+Signature 227 verified in 1363057 cycles
+Signature 228 verified in 1371712 cycles
+Signature 229 verified in 1371724 cycles
+Signature 230 verified in 1250121 cycles
+Signature 231 verified in 1397788 cycles
+Signature 232 verified in 1319612 cycles
+Signature 233 verified in 1293565 cycles
+Signature 234 verified in 1458567 cycles
+Signature 235 verified in 1458588 cycles
+Signature 236 verified in 1293566 cycles
+Signature 237 verified in 1284870 cycles
+Signature 238 verified in 1354354 cycles
+Signature 239 verified in 1302231 cycles
+Signature 240 verified in 1363043 cycles
+Signature 241 verified in 1284876 cycles
+Signature 242 verified in 1371726 cycles
+Signature 243 verified in 1363047 cycles
+Signature 244 verified in 1319622 cycles
+Signature 245 verified in 1363033 cycles
+Signature 246 verified in 1310909 cycles
+Signature 247 verified in 1302243 cycles
+Signature 248 verified in 1319607 cycles
+Signature 249 verified in 1354348 cycles
+Signature 250 verified in 1354359 cycles
+Signature 251 verified in 1415154 cycles
+Signature 252 verified in 1415147 cycles
+Signature 253 verified in 1397776 cycles
+Signature 254 verified in 1380404 cycles
+Signature 255 verified in 1406459 cycles
+Signature 256 verified in 1415141 cycles
+All 256 signatures verified. Total cycles: 650506196, per signature: 2541039
+Proof time:  10m 2s
+Proof size:  343666 bytes (335.6 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  256
+  Proof size:  343666 bytes (335.6 KiB)
+  Verify time: 12.1ms
+
+=== SLH-DSA STARK Batch Verification Demo ===
+Signatures: 512
+
+[1/5] $ keygen -n 512 -o secrets.json -p pubkeys.json -v
+Generated 512 keypair(s)
+  Secrets:     demo/secrets.json
+  Public keys: demo/pubkeys.json
+
+[2/5] $ sign -k secrets.json -m generated.json -o signatures.json -v
+Signed message 1: "tx 1: proof curve shard"
+Signed message 2: "tx 2: prime secure lattice"
+Signed message 3: "tx 3: forge entropy quantum"
+Signed message 4: "tx 4: valid node commit"
+Signed message 5: "tx 5: stark bitcoin chain"
+Signed message 6: "tx 6: entropy digest epoch"
+Signed message 7: "tx 7: digest post cipher"
+Signed message 8: "tx 8: miner nonce future"
+Signed message 9: "tx 9: future miner oracle"
+Signed message 10: "tx 10: chain block block"
+Signed message 11: "tx 11: lattice oracle miner"
+Signed message 12: "tx 12: reveal future nonce"
+Signed message 13: "tx 13: state cipher post"
+Signed message 14: "tx 14: merkle epoch digest"
+Signed message 15: "tx 15: sign chain bitcoin"
+Signed message 16: "tx 16: curve commit node"
+Signed message 17: "tx 17: node quantum entropy"
+Signed message 18: "tx 18: post lattice secure"
+Signed message 19: "tx 19: block shard curve"
+Signed message 20: "tx 20: cipher proof stark"
+Signed message 21: "tx 21: commit reveal trust"
+Signed message 22: "tx 22: shard hash sign"
+Signed message 23: "tx 23: hash prime valid"
+Signed message 24: "tx 24: verify state field"
+Signed message 25: "tx 25: field verify merkle"
+Signed message 26: "tx 26: trust forge forge"
+Signed message 27: "tx 27: secure merkle verify"
+Signed message 28: "tx 28: bitcoin field state"
+Signed message 29: "tx 29: nonce valid prime"
+Signed message 30: "tx 30: oracle sign hash"
+Signed message 31: "tx 31: epoch trust reveal"
+Signed message 32: "tx 32: quantum stark proof"
+Signed message 33: "tx 33: proof curve shard"
+Signed message 34: "tx 34: prime secure lattice"
+Signed message 35: "tx 35: forge entropy quantum"
+Signed message 36: "tx 36: valid node commit"
+Signed message 37: "tx 37: stark bitcoin chain"
+Signed message 38: "tx 38: entropy digest epoch"
+Signed message 39: "tx 39: digest post cipher"
+Signed message 40: "tx 40: miner nonce future"
+Signed message 41: "tx 41: future miner oracle"
+Signed message 42: "tx 42: chain block block"
+Signed message 43: "tx 43: lattice oracle miner"
+Signed message 44: "tx 44: reveal future nonce"
+Signed message 45: "tx 45: state cipher post"
+Signed message 46: "tx 46: merkle epoch digest"
+Signed message 47: "tx 47: sign chain bitcoin"
+Signed message 48: "tx 48: curve commit node"
+Signed message 49: "tx 49: node quantum entropy"
+Signed message 50: "tx 50: post lattice secure"
+Signed message 51: "tx 51: block shard curve"
+Signed message 52: "tx 52: cipher proof stark"
+Signed message 53: "tx 53: commit reveal trust"
+Signed message 54: "tx 54: shard hash sign"
+Signed message 55: "tx 55: hash prime valid"
+Signed message 56: "tx 56: verify state field"
+Signed message 57: "tx 57: field verify merkle"
+Signed message 58: "tx 58: trust forge forge"
+Signed message 59: "tx 59: secure merkle verify"
+Signed message 60: "tx 60: bitcoin field state"
+Signed message 61: "tx 61: nonce valid prime"
+Signed message 62: "tx 62: oracle sign hash"
+Signed message 63: "tx 63: epoch trust reveal"
+Signed message 64: "tx 64: quantum stark proof"
+Signed message 65: "tx 65: proof curve shard"
+Signed message 66: "tx 66: prime secure lattice"
+Signed message 67: "tx 67: forge entropy quantum"
+Signed message 68: "tx 68: valid node commit"
+Signed message 69: "tx 69: stark bitcoin chain"
+Signed message 70: "tx 70: entropy digest epoch"
+Signed message 71: "tx 71: digest post cipher"
+Signed message 72: "tx 72: miner nonce future"
+Signed message 73: "tx 73: future miner oracle"
+Signed message 74: "tx 74: chain block block"
+Signed message 75: "tx 75: lattice oracle miner"
+Signed message 76: "tx 76: reveal future nonce"
+Signed message 77: "tx 77: state cipher post"
+Signed message 78: "tx 78: merkle epoch digest"
+Signed message 79: "tx 79: sign chain bitcoin"
+Signed message 80: "tx 80: curve commit node"
+Signed message 81: "tx 81: node quantum entropy"
+Signed message 82: "tx 82: post lattice secure"
+Signed message 83: "tx 83: block shard curve"
+Signed message 84: "tx 84: cipher proof stark"
+Signed message 85: "tx 85: commit reveal trust"
+Signed message 86: "tx 86: shard hash sign"
+Signed message 87: "tx 87: hash prime valid"
+Signed message 88: "tx 88: verify state field"
+Signed message 89: "tx 89: field verify merkle"
+Signed message 90: "tx 90: trust forge forge"
+Signed message 91: "tx 91: secure merkle verify"
+Signed message 92: "tx 92: bitcoin field state"
+Signed message 93: "tx 93: nonce valid prime"
+Signed message 94: "tx 94: oracle sign hash"
+Signed message 95: "tx 95: epoch trust reveal"
+Signed message 96: "tx 96: quantum stark proof"
+Signed message 97: "tx 97: proof curve shard"
+Signed message 98: "tx 98: prime secure lattice"
+Signed message 99: "tx 99: forge entropy quantum"
+Signed message 100: "tx 100: valid node commit"
+Signed message 101: "tx 101: stark bitcoin chain"
+Signed message 102: "tx 102: entropy digest epoch"
+Signed message 103: "tx 103: digest post cipher"
+Signed message 104: "tx 104: miner nonce future"
+Signed message 105: "tx 105: future miner oracle"
+Signed message 106: "tx 106: chain block block"
+Signed message 107: "tx 107: lattice oracle miner"
+Signed message 108: "tx 108: reveal future nonce"
+Signed message 109: "tx 109: state cipher post"
+Signed message 110: "tx 110: merkle epoch digest"
+Signed message 111: "tx 111: sign chain bitcoin"
+Signed message 112: "tx 112: curve commit node"
+Signed message 113: "tx 113: node quantum entropy"
+Signed message 114: "tx 114: post lattice secure"
+Signed message 115: "tx 115: block shard curve"
+Signed message 116: "tx 116: cipher proof stark"
+Signed message 117: "tx 117: commit reveal trust"
+Signed message 118: "tx 118: shard hash sign"
+Signed message 119: "tx 119: hash prime valid"
+Signed message 120: "tx 120: verify state field"
+Signed message 121: "tx 121: field verify merkle"
+Signed message 122: "tx 122: trust forge forge"
+Signed message 123: "tx 123: secure merkle verify"
+Signed message 124: "tx 124: bitcoin field state"
+Signed message 125: "tx 125: nonce valid prime"
+Signed message 126: "tx 126: oracle sign hash"
+Signed message 127: "tx 127: epoch trust reveal"
+Signed message 128: "tx 128: quantum stark proof"
+Signed message 129: "tx 129: proof curve shard"
+Signed message 130: "tx 130: prime secure lattice"
+Signed message 131: "tx 131: forge entropy quantum"
+Signed message 132: "tx 132: valid node commit"
+Signed message 133: "tx 133: stark bitcoin chain"
+Signed message 134: "tx 134: entropy digest epoch"
+Signed message 135: "tx 135: digest post cipher"
+Signed message 136: "tx 136: miner nonce future"
+Signed message 137: "tx 137: future miner oracle"
+Signed message 138: "tx 138: chain block block"
+Signed message 139: "tx 139: lattice oracle miner"
+Signed message 140: "tx 140: reveal future nonce"
+Signed message 141: "tx 141: state cipher post"
+Signed message 142: "tx 142: merkle epoch digest"
+Signed message 143: "tx 143: sign chain bitcoin"
+Signed message 144: "tx 144: curve commit node"
+Signed message 145: "tx 145: node quantum entropy"
+Signed message 146: "tx 146: post lattice secure"
+Signed message 147: "tx 147: block shard curve"
+Signed message 148: "tx 148: cipher proof stark"
+Signed message 149: "tx 149: commit reveal trust"
+Signed message 150: "tx 150: shard hash sign"
+Signed message 151: "tx 151: hash prime valid"
+Signed message 152: "tx 152: verify state field"
+Signed message 153: "tx 153: field verify merkle"
+Signed message 154: "tx 154: trust forge forge"
+Signed message 155: "tx 155: secure merkle verify"
+Signed message 156: "tx 156: bitcoin field state"
+Signed message 157: "tx 157: nonce valid prime"
+Signed message 158: "tx 158: oracle sign hash"
+Signed message 159: "tx 159: epoch trust reveal"
+Signed message 160: "tx 160: quantum stark proof"
+Signed message 161: "tx 161: proof curve shard"
+Signed message 162: "tx 162: prime secure lattice"
+Signed message 163: "tx 163: forge entropy quantum"
+Signed message 164: "tx 164: valid node commit"
+Signed message 165: "tx 165: stark bitcoin chain"
+Signed message 166: "tx 166: entropy digest epoch"
+Signed message 167: "tx 167: digest post cipher"
+Signed message 168: "tx 168: miner nonce future"
+Signed message 169: "tx 169: future miner oracle"
+Signed message 170: "tx 170: chain block block"
+Signed message 171: "tx 171: lattice oracle miner"
+Signed message 172: "tx 172: reveal future nonce"
+Signed message 173: "tx 173: state cipher post"
+Signed message 174: "tx 174: merkle epoch digest"
+Signed message 175: "tx 175: sign chain bitcoin"
+Signed message 176: "tx 176: curve commit node"
+Signed message 177: "tx 177: node quantum entropy"
+Signed message 178: "tx 178: post lattice secure"
+Signed message 179: "tx 179: block shard curve"
+Signed message 180: "tx 180: cipher proof stark"
+Signed message 181: "tx 181: commit reveal trust"
+Signed message 182: "tx 182: shard hash sign"
+Signed message 183: "tx 183: hash prime valid"
+Signed message 184: "tx 184: verify state field"
+Signed message 185: "tx 185: field verify merkle"
+Signed message 186: "tx 186: trust forge forge"
+Signed message 187: "tx 187: secure merkle verify"
+Signed message 188: "tx 188: bitcoin field state"
+Signed message 189: "tx 189: nonce valid prime"
+Signed message 190: "tx 190: oracle sign hash"
+Signed message 191: "tx 191: epoch trust reveal"
+Signed message 192: "tx 192: quantum stark proof"
+Signed message 193: "tx 193: proof curve shard"
+Signed message 194: "tx 194: prime secure lattice"
+Signed message 195: "tx 195: forge entropy quantum"
+Signed message 196: "tx 196: valid node commit"
+Signed message 197: "tx 197: stark bitcoin chain"
+Signed message 198: "tx 198: entropy digest epoch"
+Signed message 199: "tx 199: digest post cipher"
+Signed message 200: "tx 200: miner nonce future"
+Signed message 201: "tx 201: future miner oracle"
+Signed message 202: "tx 202: chain block block"
+Signed message 203: "tx 203: lattice oracle miner"
+Signed message 204: "tx 204: reveal future nonce"
+Signed message 205: "tx 205: state cipher post"
+Signed message 206: "tx 206: merkle epoch digest"
+Signed message 207: "tx 207: sign chain bitcoin"
+Signed message 208: "tx 208: curve commit node"
+Signed message 209: "tx 209: node quantum entropy"
+Signed message 210: "tx 210: post lattice secure"
+Signed message 211: "tx 211: block shard curve"
+Signed message 212: "tx 212: cipher proof stark"
+Signed message 213: "tx 213: commit reveal trust"
+Signed message 214: "tx 214: shard hash sign"
+Signed message 215: "tx 215: hash prime valid"
+Signed message 216: "tx 216: verify state field"
+Signed message 217: "tx 217: field verify merkle"
+Signed message 218: "tx 218: trust forge forge"
+Signed message 219: "tx 219: secure merkle verify"
+Signed message 220: "tx 220: bitcoin field state"
+Signed message 221: "tx 221: nonce valid prime"
+Signed message 222: "tx 222: oracle sign hash"
+Signed message 223: "tx 223: epoch trust reveal"
+Signed message 224: "tx 224: quantum stark proof"
+Signed message 225: "tx 225: proof curve shard"
+Signed message 226: "tx 226: prime secure lattice"
+Signed message 227: "tx 227: forge entropy quantum"
+Signed message 228: "tx 228: valid node commit"
+Signed message 229: "tx 229: stark bitcoin chain"
+Signed message 230: "tx 230: entropy digest epoch"
+Signed message 231: "tx 231: digest post cipher"
+Signed message 232: "tx 232: miner nonce future"
+Signed message 233: "tx 233: future miner oracle"
+Signed message 234: "tx 234: chain block block"
+Signed message 235: "tx 235: lattice oracle miner"
+Signed message 236: "tx 236: reveal future nonce"
+Signed message 237: "tx 237: state cipher post"
+Signed message 238: "tx 238: merkle epoch digest"
+Signed message 239: "tx 239: sign chain bitcoin"
+Signed message 240: "tx 240: curve commit node"
+Signed message 241: "tx 241: node quantum entropy"
+Signed message 242: "tx 242: post lattice secure"
+Signed message 243: "tx 243: block shard curve"
+Signed message 244: "tx 244: cipher proof stark"
+Signed message 245: "tx 245: commit reveal trust"
+Signed message 246: "tx 246: shard hash sign"
+Signed message 247: "tx 247: hash prime valid"
+Signed message 248: "tx 248: verify state field"
+Signed message 249: "tx 249: field verify merkle"
+Signed message 250: "tx 250: trust forge forge"
+Signed message 251: "tx 251: secure merkle verify"
+Signed message 252: "tx 252: bitcoin field state"
+Signed message 253: "tx 253: nonce valid prime"
+Signed message 254: "tx 254: oracle sign hash"
+Signed message 255: "tx 255: epoch trust reveal"
+Signed message 256: "tx 256: quantum stark proof"
+Signed message 257: "tx 257: proof curve shard"
+Signed message 258: "tx 258: prime secure lattice"
+Signed message 259: "tx 259: forge entropy quantum"
+Signed message 260: "tx 260: valid node commit"
+Signed message 261: "tx 261: stark bitcoin chain"
+Signed message 262: "tx 262: entropy digest epoch"
+Signed message 263: "tx 263: digest post cipher"
+Signed message 264: "tx 264: miner nonce future"
+Signed message 265: "tx 265: future miner oracle"
+Signed message 266: "tx 266: chain block block"
+Signed message 267: "tx 267: lattice oracle miner"
+Signed message 268: "tx 268: reveal future nonce"
+Signed message 269: "tx 269: state cipher post"
+Signed message 270: "tx 270: merkle epoch digest"
+Signed message 271: "tx 271: sign chain bitcoin"
+Signed message 272: "tx 272: curve commit node"
+Signed message 273: "tx 273: node quantum entropy"
+Signed message 274: "tx 274: post lattice secure"
+Signed message 275: "tx 275: block shard curve"
+Signed message 276: "tx 276: cipher proof stark"
+Signed message 277: "tx 277: commit reveal trust"
+Signed message 278: "tx 278: shard hash sign"
+Signed message 279: "tx 279: hash prime valid"
+Signed message 280: "tx 280: verify state field"
+Signed message 281: "tx 281: field verify merkle"
+Signed message 282: "tx 282: trust forge forge"
+Signed message 283: "tx 283: secure merkle verify"
+Signed message 284: "tx 284: bitcoin field state"
+Signed message 285: "tx 285: nonce valid prime"
+Signed message 286: "tx 286: oracle sign hash"
+Signed message 287: "tx 287: epoch trust reveal"
+Signed message 288: "tx 288: quantum stark proof"
+Signed message 289: "tx 289: proof curve shard"
+Signed message 290: "tx 290: prime secure lattice"
+Signed message 291: "tx 291: forge entropy quantum"
+Signed message 292: "tx 292: valid node commit"
+Signed message 293: "tx 293: stark bitcoin chain"
+Signed message 294: "tx 294: entropy digest epoch"
+Signed message 295: "tx 295: digest post cipher"
+Signed message 296: "tx 296: miner nonce future"
+Signed message 297: "tx 297: future miner oracle"
+Signed message 298: "tx 298: chain block block"
+Signed message 299: "tx 299: lattice oracle miner"
+Signed message 300: "tx 300: reveal future nonce"
+Signed message 301: "tx 301: state cipher post"
+Signed message 302: "tx 302: merkle epoch digest"
+Signed message 303: "tx 303: sign chain bitcoin"
+Signed message 304: "tx 304: curve commit node"
+Signed message 305: "tx 305: node quantum entropy"
+Signed message 306: "tx 306: post lattice secure"
+Signed message 307: "tx 307: block shard curve"
+Signed message 308: "tx 308: cipher proof stark"
+Signed message 309: "tx 309: commit reveal trust"
+Signed message 310: "tx 310: shard hash sign"
+Signed message 311: "tx 311: hash prime valid"
+Signed message 312: "tx 312: verify state field"
+Signed message 313: "tx 313: field verify merkle"
+Signed message 314: "tx 314: trust forge forge"
+Signed message 315: "tx 315: secure merkle verify"
+Signed message 316: "tx 316: bitcoin field state"
+Signed message 317: "tx 317: nonce valid prime"
+Signed message 318: "tx 318: oracle sign hash"
+Signed message 319: "tx 319: epoch trust reveal"
+Signed message 320: "tx 320: quantum stark proof"
+Signed message 321: "tx 321: proof curve shard"
+Signed message 322: "tx 322: prime secure lattice"
+Signed message 323: "tx 323: forge entropy quantum"
+Signed message 324: "tx 324: valid node commit"
+Signed message 325: "tx 325: stark bitcoin chain"
+Signed message 326: "tx 326: entropy digest epoch"
+Signed message 327: "tx 327: digest post cipher"
+Signed message 328: "tx 328: miner nonce future"
+Signed message 329: "tx 329: future miner oracle"
+Signed message 330: "tx 330: chain block block"
+Signed message 331: "tx 331: lattice oracle miner"
+Signed message 332: "tx 332: reveal future nonce"
+Signed message 333: "tx 333: state cipher post"
+Signed message 334: "tx 334: merkle epoch digest"
+Signed message 335: "tx 335: sign chain bitcoin"
+Signed message 336: "tx 336: curve commit node"
+Signed message 337: "tx 337: node quantum entropy"
+Signed message 338: "tx 338: post lattice secure"
+Signed message 339: "tx 339: block shard curve"
+Signed message 340: "tx 340: cipher proof stark"
+Signed message 341: "tx 341: commit reveal trust"
+Signed message 342: "tx 342: shard hash sign"
+Signed message 343: "tx 343: hash prime valid"
+Signed message 344: "tx 344: verify state field"
+Signed message 345: "tx 345: field verify merkle"
+Signed message 346: "tx 346: trust forge forge"
+Signed message 347: "tx 347: secure merkle verify"
+Signed message 348: "tx 348: bitcoin field state"
+Signed message 349: "tx 349: nonce valid prime"
+Signed message 350: "tx 350: oracle sign hash"
+Signed message 351: "tx 351: epoch trust reveal"
+Signed message 352: "tx 352: quantum stark proof"
+Signed message 353: "tx 353: proof curve shard"
+Signed message 354: "tx 354: prime secure lattice"
+Signed message 355: "tx 355: forge entropy quantum"
+Signed message 356: "tx 356: valid node commit"
+Signed message 357: "tx 357: stark bitcoin chain"
+Signed message 358: "tx 358: entropy digest epoch"
+Signed message 359: "tx 359: digest post cipher"
+Signed message 360: "tx 360: miner nonce future"
+Signed message 361: "tx 361: future miner oracle"
+Signed message 362: "tx 362: chain block block"
+Signed message 363: "tx 363: lattice oracle miner"
+Signed message 364: "tx 364: reveal future nonce"
+Signed message 365: "tx 365: state cipher post"
+Signed message 366: "tx 366: merkle epoch digest"
+Signed message 367: "tx 367: sign chain bitcoin"
+Signed message 368: "tx 368: curve commit node"
+Signed message 369: "tx 369: node quantum entropy"
+Signed message 370: "tx 370: post lattice secure"
+Signed message 371: "tx 371: block shard curve"
+Signed message 372: "tx 372: cipher proof stark"
+Signed message 373: "tx 373: commit reveal trust"
+Signed message 374: "tx 374: shard hash sign"
+Signed message 375: "tx 375: hash prime valid"
+Signed message 376: "tx 376: verify state field"
+Signed message 377: "tx 377: field verify merkle"
+Signed message 378: "tx 378: trust forge forge"
+Signed message 379: "tx 379: secure merkle verify"
+Signed message 380: "tx 380: bitcoin field state"
+Signed message 381: "tx 381: nonce valid prime"
+Signed message 382: "tx 382: oracle sign hash"
+Signed message 383: "tx 383: epoch trust reveal"
+Signed message 384: "tx 384: quantum stark proof"
+Signed message 385: "tx 385: proof curve shard"
+Signed message 386: "tx 386: prime secure lattice"
+Signed message 387: "tx 387: forge entropy quantum"
+Signed message 388: "tx 388: valid node commit"
+Signed message 389: "tx 389: stark bitcoin chain"
+Signed message 390: "tx 390: entropy digest epoch"
+Signed message 391: "tx 391: digest post cipher"
+Signed message 392: "tx 392: miner nonce future"
+Signed message 393: "tx 393: future miner oracle"
+Signed message 394: "tx 394: chain block block"
+Signed message 395: "tx 395: lattice oracle miner"
+Signed message 396: "tx 396: reveal future nonce"
+Signed message 397: "tx 397: state cipher post"
+Signed message 398: "tx 398: merkle epoch digest"
+Signed message 399: "tx 399: sign chain bitcoin"
+Signed message 400: "tx 400: curve commit node"
+Signed message 401: "tx 401: node quantum entropy"
+Signed message 402: "tx 402: post lattice secure"
+Signed message 403: "tx 403: block shard curve"
+Signed message 404: "tx 404: cipher proof stark"
+Signed message 405: "tx 405: commit reveal trust"
+Signed message 406: "tx 406: shard hash sign"
+Signed message 407: "tx 407: hash prime valid"
+Signed message 408: "tx 408: verify state field"
+Signed message 409: "tx 409: field verify merkle"
+Signed message 410: "tx 410: trust forge forge"
+Signed message 411: "tx 411: secure merkle verify"
+Signed message 412: "tx 412: bitcoin field state"
+Signed message 413: "tx 413: nonce valid prime"
+Signed message 414: "tx 414: oracle sign hash"
+Signed message 415: "tx 415: epoch trust reveal"
+Signed message 416: "tx 416: quantum stark proof"
+Signed message 417: "tx 417: proof curve shard"
+Signed message 418: "tx 418: prime secure lattice"
+Signed message 419: "tx 419: forge entropy quantum"
+Signed message 420: "tx 420: valid node commit"
+Signed message 421: "tx 421: stark bitcoin chain"
+Signed message 422: "tx 422: entropy digest epoch"
+Signed message 423: "tx 423: digest post cipher"
+Signed message 424: "tx 424: miner nonce future"
+Signed message 425: "tx 425: future miner oracle"
+Signed message 426: "tx 426: chain block block"
+Signed message 427: "tx 427: lattice oracle miner"
+Signed message 428: "tx 428: reveal future nonce"
+Signed message 429: "tx 429: state cipher post"
+Signed message 430: "tx 430: merkle epoch digest"
+Signed message 431: "tx 431: sign chain bitcoin"
+Signed message 432: "tx 432: curve commit node"
+Signed message 433: "tx 433: node quantum entropy"
+Signed message 434: "tx 434: post lattice secure"
+Signed message 435: "tx 435: block shard curve"
+Signed message 436: "tx 436: cipher proof stark"
+Signed message 437: "tx 437: commit reveal trust"
+Signed message 438: "tx 438: shard hash sign"
+Signed message 439: "tx 439: hash prime valid"
+Signed message 440: "tx 440: verify state field"
+Signed message 441: "tx 441: field verify merkle"
+Signed message 442: "tx 442: trust forge forge"
+Signed message 443: "tx 443: secure merkle verify"
+Signed message 444: "tx 444: bitcoin field state"
+Signed message 445: "tx 445: nonce valid prime"
+Signed message 446: "tx 446: oracle sign hash"
+Signed message 447: "tx 447: epoch trust reveal"
+Signed message 448: "tx 448: quantum stark proof"
+Signed message 449: "tx 449: proof curve shard"
+Signed message 450: "tx 450: prime secure lattice"
+Signed message 451: "tx 451: forge entropy quantum"
+Signed message 452: "tx 452: valid node commit"
+Signed message 453: "tx 453: stark bitcoin chain"
+Signed message 454: "tx 454: entropy digest epoch"
+Signed message 455: "tx 455: digest post cipher"
+Signed message 456: "tx 456: miner nonce future"
+Signed message 457: "tx 457: future miner oracle"
+Signed message 458: "tx 458: chain block block"
+Signed message 459: "tx 459: lattice oracle miner"
+Signed message 460: "tx 460: reveal future nonce"
+Signed message 461: "tx 461: state cipher post"
+Signed message 462: "tx 462: merkle epoch digest"
+Signed message 463: "tx 463: sign chain bitcoin"
+Signed message 464: "tx 464: curve commit node"
+Signed message 465: "tx 465: node quantum entropy"
+Signed message 466: "tx 466: post lattice secure"
+Signed message 467: "tx 467: block shard curve"
+Signed message 468: "tx 468: cipher proof stark"
+Signed message 469: "tx 469: commit reveal trust"
+Signed message 470: "tx 470: shard hash sign"
+Signed message 471: "tx 471: hash prime valid"
+Signed message 472: "tx 472: verify state field"
+Signed message 473: "tx 473: field verify merkle"
+Signed message 474: "tx 474: trust forge forge"
+Signed message 475: "tx 475: secure merkle verify"
+Signed message 476: "tx 476: bitcoin field state"
+Signed message 477: "tx 477: nonce valid prime"
+Signed message 478: "tx 478: oracle sign hash"
+Signed message 479: "tx 479: epoch trust reveal"
+Signed message 480: "tx 480: quantum stark proof"
+Signed message 481: "tx 481: proof curve shard"
+Signed message 482: "tx 482: prime secure lattice"
+Signed message 483: "tx 483: forge entropy quantum"
+Signed message 484: "tx 484: valid node commit"
+Signed message 485: "tx 485: stark bitcoin chain"
+Signed message 486: "tx 486: entropy digest epoch"
+Signed message 487: "tx 487: digest post cipher"
+Signed message 488: "tx 488: miner nonce future"
+Signed message 489: "tx 489: future miner oracle"
+Signed message 490: "tx 490: chain block block"
+Signed message 491: "tx 491: lattice oracle miner"
+Signed message 492: "tx 492: reveal future nonce"
+Signed message 493: "tx 493: state cipher post"
+Signed message 494: "tx 494: merkle epoch digest"
+Signed message 495: "tx 495: sign chain bitcoin"
+Signed message 496: "tx 496: curve commit node"
+Signed message 497: "tx 497: node quantum entropy"
+Signed message 498: "tx 498: post lattice secure"
+Signed message 499: "tx 499: block shard curve"
+Signed message 500: "tx 500: cipher proof stark"
+Signed message 501: "tx 501: commit reveal trust"
+Signed message 502: "tx 502: shard hash sign"
+Signed message 503: "tx 503: hash prime valid"
+Signed message 504: "tx 504: verify state field"
+Signed message 505: "tx 505: field verify merkle"
+Signed message 506: "tx 506: trust forge forge"
+Signed message 507: "tx 507: secure merkle verify"
+Signed message 508: "tx 508: bitcoin field state"
+Signed message 509: "tx 509: nonce valid prime"
+Signed message 510: "tx 510: oracle sign hash"
+Signed message 511: "tx 511: epoch trust reveal"
+Signed message 512: "tx 512: quantum stark proof"
+Signed 512 message(s)
+  Signatures: demo/signatures.json
+
+[3/5] $ verify -s signatures.json -k pubkeys.json -m generated.json -v
+  Signature 1 valid
+  Signature 2 valid
+  Signature 3 valid
+  Signature 4 valid
+  Signature 5 valid
+  Signature 6 valid
+  Signature 7 valid
+  Signature 8 valid
+  Signature 9 valid
+  Signature 10 valid
+  Signature 11 valid
+  Signature 12 valid
+  Signature 13 valid
+  Signature 14 valid
+  Signature 15 valid
+  Signature 16 valid
+  Signature 17 valid
+  Signature 18 valid
+  Signature 19 valid
+  Signature 20 valid
+  Signature 21 valid
+  Signature 22 valid
+  Signature 23 valid
+  Signature 24 valid
+  Signature 25 valid
+  Signature 26 valid
+  Signature 27 valid
+  Signature 28 valid
+  Signature 29 valid
+  Signature 30 valid
+  Signature 31 valid
+  Signature 32 valid
+  Signature 33 valid
+  Signature 34 valid
+  Signature 35 valid
+  Signature 36 valid
+  Signature 37 valid
+  Signature 38 valid
+  Signature 39 valid
+  Signature 40 valid
+  Signature 41 valid
+  Signature 42 valid
+  Signature 43 valid
+  Signature 44 valid
+  Signature 45 valid
+  Signature 46 valid
+  Signature 47 valid
+  Signature 48 valid
+  Signature 49 valid
+  Signature 50 valid
+  Signature 51 valid
+  Signature 52 valid
+  Signature 53 valid
+  Signature 54 valid
+  Signature 55 valid
+  Signature 56 valid
+  Signature 57 valid
+  Signature 58 valid
+  Signature 59 valid
+  Signature 60 valid
+  Signature 61 valid
+  Signature 62 valid
+  Signature 63 valid
+  Signature 64 valid
+  Signature 65 valid
+  Signature 66 valid
+  Signature 67 valid
+  Signature 68 valid
+  Signature 69 valid
+  Signature 70 valid
+  Signature 71 valid
+  Signature 72 valid
+  Signature 73 valid
+  Signature 74 valid
+  Signature 75 valid
+  Signature 76 valid
+  Signature 77 valid
+  Signature 78 valid
+  Signature 79 valid
+  Signature 80 valid
+  Signature 81 valid
+  Signature 82 valid
+  Signature 83 valid
+  Signature 84 valid
+  Signature 85 valid
+  Signature 86 valid
+  Signature 87 valid
+  Signature 88 valid
+  Signature 89 valid
+  Signature 90 valid
+  Signature 91 valid
+  Signature 92 valid
+  Signature 93 valid
+  Signature 94 valid
+  Signature 95 valid
+  Signature 96 valid
+  Signature 97 valid
+  Signature 98 valid
+  Signature 99 valid
+  Signature 100 valid
+  Signature 101 valid
+  Signature 102 valid
+  Signature 103 valid
+  Signature 104 valid
+  Signature 105 valid
+  Signature 106 valid
+  Signature 107 valid
+  Signature 108 valid
+  Signature 109 valid
+  Signature 110 valid
+  Signature 111 valid
+  Signature 112 valid
+  Signature 113 valid
+  Signature 114 valid
+  Signature 115 valid
+  Signature 116 valid
+  Signature 117 valid
+  Signature 118 valid
+  Signature 119 valid
+  Signature 120 valid
+  Signature 121 valid
+  Signature 122 valid
+  Signature 123 valid
+  Signature 124 valid
+  Signature 125 valid
+  Signature 126 valid
+  Signature 127 valid
+  Signature 128 valid
+  Signature 129 valid
+  Signature 130 valid
+  Signature 131 valid
+  Signature 132 valid
+  Signature 133 valid
+  Signature 134 valid
+  Signature 135 valid
+  Signature 136 valid
+  Signature 137 valid
+  Signature 138 valid
+  Signature 139 valid
+  Signature 140 valid
+  Signature 141 valid
+  Signature 142 valid
+  Signature 143 valid
+  Signature 144 valid
+  Signature 145 valid
+  Signature 146 valid
+  Signature 147 valid
+  Signature 148 valid
+  Signature 149 valid
+  Signature 150 valid
+  Signature 151 valid
+  Signature 152 valid
+  Signature 153 valid
+  Signature 154 valid
+  Signature 155 valid
+  Signature 156 valid
+  Signature 157 valid
+  Signature 158 valid
+  Signature 159 valid
+  Signature 160 valid
+  Signature 161 valid
+  Signature 162 valid
+  Signature 163 valid
+  Signature 164 valid
+  Signature 165 valid
+  Signature 166 valid
+  Signature 167 valid
+  Signature 168 valid
+  Signature 169 valid
+  Signature 170 valid
+  Signature 171 valid
+  Signature 172 valid
+  Signature 173 valid
+  Signature 174 valid
+  Signature 175 valid
+  Signature 176 valid
+  Signature 177 valid
+  Signature 178 valid
+  Signature 179 valid
+  Signature 180 valid
+  Signature 181 valid
+  Signature 182 valid
+  Signature 183 valid
+  Signature 184 valid
+  Signature 185 valid
+  Signature 186 valid
+  Signature 187 valid
+  Signature 188 valid
+  Signature 189 valid
+  Signature 190 valid
+  Signature 191 valid
+  Signature 192 valid
+  Signature 193 valid
+  Signature 194 valid
+  Signature 195 valid
+  Signature 196 valid
+  Signature 197 valid
+  Signature 198 valid
+  Signature 199 valid
+  Signature 200 valid
+  Signature 201 valid
+  Signature 202 valid
+  Signature 203 valid
+  Signature 204 valid
+  Signature 205 valid
+  Signature 206 valid
+  Signature 207 valid
+  Signature 208 valid
+  Signature 209 valid
+  Signature 210 valid
+  Signature 211 valid
+  Signature 212 valid
+  Signature 213 valid
+  Signature 214 valid
+  Signature 215 valid
+  Signature 216 valid
+  Signature 217 valid
+  Signature 218 valid
+  Signature 219 valid
+  Signature 220 valid
+  Signature 221 valid
+  Signature 222 valid
+  Signature 223 valid
+  Signature 224 valid
+  Signature 225 valid
+  Signature 226 valid
+  Signature 227 valid
+  Signature 228 valid
+  Signature 229 valid
+  Signature 230 valid
+  Signature 231 valid
+  Signature 232 valid
+  Signature 233 valid
+  Signature 234 valid
+  Signature 235 valid
+  Signature 236 valid
+  Signature 237 valid
+  Signature 238 valid
+  Signature 239 valid
+  Signature 240 valid
+  Signature 241 valid
+  Signature 242 valid
+  Signature 243 valid
+  Signature 244 valid
+  Signature 245 valid
+  Signature 246 valid
+  Signature 247 valid
+  Signature 248 valid
+  Signature 249 valid
+  Signature 250 valid
+  Signature 251 valid
+  Signature 252 valid
+  Signature 253 valid
+  Signature 254 valid
+  Signature 255 valid
+  Signature 256 valid
+  Signature 257 valid
+  Signature 258 valid
+  Signature 259 valid
+  Signature 260 valid
+  Signature 261 valid
+  Signature 262 valid
+  Signature 263 valid
+  Signature 264 valid
+  Signature 265 valid
+  Signature 266 valid
+  Signature 267 valid
+  Signature 268 valid
+  Signature 269 valid
+  Signature 270 valid
+  Signature 271 valid
+  Signature 272 valid
+  Signature 273 valid
+  Signature 274 valid
+  Signature 275 valid
+  Signature 276 valid
+  Signature 277 valid
+  Signature 278 valid
+  Signature 279 valid
+  Signature 280 valid
+  Signature 281 valid
+  Signature 282 valid
+  Signature 283 valid
+  Signature 284 valid
+  Signature 285 valid
+  Signature 286 valid
+  Signature 287 valid
+  Signature 288 valid
+  Signature 289 valid
+  Signature 290 valid
+  Signature 291 valid
+  Signature 292 valid
+  Signature 293 valid
+  Signature 294 valid
+  Signature 295 valid
+  Signature 296 valid
+  Signature 297 valid
+  Signature 298 valid
+  Signature 299 valid
+  Signature 300 valid
+  Signature 301 valid
+  Signature 302 valid
+  Signature 303 valid
+  Signature 304 valid
+  Signature 305 valid
+  Signature 306 valid
+  Signature 307 valid
+  Signature 308 valid
+  Signature 309 valid
+  Signature 310 valid
+  Signature 311 valid
+  Signature 312 valid
+  Signature 313 valid
+  Signature 314 valid
+  Signature 315 valid
+  Signature 316 valid
+  Signature 317 valid
+  Signature 318 valid
+  Signature 319 valid
+  Signature 320 valid
+  Signature 321 valid
+  Signature 322 valid
+  Signature 323 valid
+  Signature 324 valid
+  Signature 325 valid
+  Signature 326 valid
+  Signature 327 valid
+  Signature 328 valid
+  Signature 329 valid
+  Signature 330 valid
+  Signature 331 valid
+  Signature 332 valid
+  Signature 333 valid
+  Signature 334 valid
+  Signature 335 valid
+  Signature 336 valid
+  Signature 337 valid
+  Signature 338 valid
+  Signature 339 valid
+  Signature 340 valid
+  Signature 341 valid
+  Signature 342 valid
+  Signature 343 valid
+  Signature 344 valid
+  Signature 345 valid
+  Signature 346 valid
+  Signature 347 valid
+  Signature 348 valid
+  Signature 349 valid
+  Signature 350 valid
+  Signature 351 valid
+  Signature 352 valid
+  Signature 353 valid
+  Signature 354 valid
+  Signature 355 valid
+  Signature 356 valid
+  Signature 357 valid
+  Signature 358 valid
+  Signature 359 valid
+  Signature 360 valid
+  Signature 361 valid
+  Signature 362 valid
+  Signature 363 valid
+  Signature 364 valid
+  Signature 365 valid
+  Signature 366 valid
+  Signature 367 valid
+  Signature 368 valid
+  Signature 369 valid
+  Signature 370 valid
+  Signature 371 valid
+  Signature 372 valid
+  Signature 373 valid
+  Signature 374 valid
+  Signature 375 valid
+  Signature 376 valid
+  Signature 377 valid
+  Signature 378 valid
+  Signature 379 valid
+  Signature 380 valid
+  Signature 381 valid
+  Signature 382 valid
+  Signature 383 valid
+  Signature 384 valid
+  Signature 385 valid
+  Signature 386 valid
+  Signature 387 valid
+  Signature 388 valid
+  Signature 389 valid
+  Signature 390 valid
+  Signature 391 valid
+  Signature 392 valid
+  Signature 393 valid
+  Signature 394 valid
+  Signature 395 valid
+  Signature 396 valid
+  Signature 397 valid
+  Signature 398 valid
+  Signature 399 valid
+  Signature 400 valid
+  Signature 401 valid
+  Signature 402 valid
+  Signature 403 valid
+  Signature 404 valid
+  Signature 405 valid
+  Signature 406 valid
+  Signature 407 valid
+  Signature 408 valid
+  Signature 409 valid
+  Signature 410 valid
+  Signature 411 valid
+  Signature 412 valid
+  Signature 413 valid
+  Signature 414 valid
+  Signature 415 valid
+  Signature 416 valid
+  Signature 417 valid
+  Signature 418 valid
+  Signature 419 valid
+  Signature 420 valid
+  Signature 421 valid
+  Signature 422 valid
+  Signature 423 valid
+  Signature 424 valid
+  Signature 425 valid
+  Signature 426 valid
+  Signature 427 valid
+  Signature 428 valid
+  Signature 429 valid
+  Signature 430 valid
+  Signature 431 valid
+  Signature 432 valid
+  Signature 433 valid
+  Signature 434 valid
+  Signature 435 valid
+  Signature 436 valid
+  Signature 437 valid
+  Signature 438 valid
+  Signature 439 valid
+  Signature 440 valid
+  Signature 441 valid
+  Signature 442 valid
+  Signature 443 valid
+  Signature 444 valid
+  Signature 445 valid
+  Signature 446 valid
+  Signature 447 valid
+  Signature 448 valid
+  Signature 449 valid
+  Signature 450 valid
+  Signature 451 valid
+  Signature 452 valid
+  Signature 453 valid
+  Signature 454 valid
+  Signature 455 valid
+  Signature 456 valid
+  Signature 457 valid
+  Signature 458 valid
+  Signature 459 valid
+  Signature 460 valid
+  Signature 461 valid
+  Signature 462 valid
+  Signature 463 valid
+  Signature 464 valid
+  Signature 465 valid
+  Signature 466 valid
+  Signature 467 valid
+  Signature 468 valid
+  Signature 469 valid
+  Signature 470 valid
+  Signature 471 valid
+  Signature 472 valid
+  Signature 473 valid
+  Signature 474 valid
+  Signature 475 valid
+  Signature 476 valid
+  Signature 477 valid
+  Signature 478 valid
+  Signature 479 valid
+  Signature 480 valid
+  Signature 481 valid
+  Signature 482 valid
+  Signature 483 valid
+  Signature 484 valid
+  Signature 485 valid
+  Signature 486 valid
+  Signature 487 valid
+  Signature 488 valid
+  Signature 489 valid
+  Signature 490 valid
+  Signature 491 valid
+  Signature 492 valid
+  Signature 493 valid
+  Signature 494 valid
+  Signature 495 valid
+  Signature 496 valid
+  Signature 497 valid
+  Signature 498 valid
+  Signature 499 valid
+  Signature 500 valid
+  Signature 501 valid
+  Signature 502 valid
+  Signature 503 valid
+  Signature 504 valid
+  Signature 505 valid
+  Signature 506 valid
+  Signature 507 valid
+  Signature 508 valid
+  Signature 509 valid
+  Signature 510 valid
+  Signature 511 valid
+  Signature 512 valid
+PASS
+  Mode:        direct signature verification
+  Signatures:  512
+  Verify time: 211.1ms
+
+[4/5] $ prove -k pubkeys.json -m generated.json -s signatures.json -o proof.bin -v
+Signature 1 verified in 1371712 cycles
+Signature 2 verified in 1363035 cycles
+Signature 3 verified in 1328304 cycles
+Signature 4 verified in 1389077 cycles
+Signature 5 verified in 1284864 cycles
+Signature 6 verified in 1276181 cycles
+Signature 7 verified in 1310925 cycles
+Signature 8 verified in 1371723 cycles
+Signature 9 verified in 1258801 cycles
+Signature 10 verified in 1319582 cycles
+Signature 11 verified in 1389090 cycles
+Signature 12 verified in 1371721 cycles
+Signature 13 verified in 1328284 cycles
+Signature 14 verified in 1284866 cycles
+Signature 15 verified in 1354354 cycles
+Signature 16 verified in 1345661 cycles
+Signature 17 verified in 1389093 cycles
+Signature 18 verified in 1293534 cycles
+Signature 19 verified in 1354354 cycles
+Signature 20 verified in 1389072 cycles
+Signature 21 verified in 1363042 cycles
+Signature 22 verified in 1371726 cycles
+Signature 23 verified in 1371711 cycles
+Signature 24 verified in 1380399 cycles
+Signature 25 verified in 1276173 cycles
+Signature 26 verified in 1293546 cycles
+Signature 27 verified in 1354359 cycles
+Signature 28 verified in 1371731 cycles
+Signature 29 verified in 1406454 cycles
+Signature 30 verified in 1363026 cycles
+Signature 31 verified in 1336974 cycles
+Signature 32 verified in 1441201 cycles
+Signature 33 verified in 1345677 cycles
+Signature 34 verified in 1371725 cycles
+Signature 35 verified in 1363048 cycles
+Signature 36 verified in 1328277 cycles
+Signature 37 verified in 1328304 cycles
+Signature 38 verified in 1267501 cycles
+Signature 39 verified in 1328295 cycles
+Signature 40 verified in 1397782 cycles
+Signature 41 verified in 1371734 cycles
+Signature 42 verified in 1423820 cycles
+Signature 43 verified in 1319619 cycles
+Signature 44 verified in 1423844 cycles
+Signature 45 verified in 1345666 cycles
+Signature 46 verified in 1371723 cycles
+Signature 47 verified in 1380422 cycles
+Signature 48 verified in 1371726 cycles
+Signature 49 verified in 1319611 cycles
+Signature 50 verified in 1363044 cycles
+Signature 51 verified in 1380402 cycles
+Signature 52 verified in 1397795 cycles
+Signature 53 verified in 1363030 cycles
+Signature 54 verified in 1302216 cycles
+Signature 55 verified in 1415137 cycles
+Signature 56 verified in 1363028 cycles
+Signature 57 verified in 1389091 cycles
+Signature 58 verified in 1328294 cycles
+Signature 59 verified in 1293552 cycles
+Signature 60 verified in 1363039 cycles
+Signature 61 verified in 1415143 cycles
+Signature 62 verified in 1336957 cycles
+Signature 63 verified in 1371719 cycles
+Signature 64 verified in 1397770 cycles
+Signature 65 verified in 1423825 cycles
+Signature 66 verified in 1371732 cycles
+Signature 67 verified in 1406476 cycles
+Signature 68 verified in 1389085 cycles
+Signature 69 verified in 1293552 cycles
+Signature 70 verified in 1380403 cycles
+Signature 71 verified in 1345660 cycles
+Signature 72 verified in 1336986 cycles
+Signature 73 verified in 1345647 cycles
+Signature 74 verified in 1363040 cycles
+Signature 75 verified in 1345674 cycles
+Signature 76 verified in 1302233 cycles
+Signature 77 verified in 1276172 cycles
+Signature 78 verified in 1345662 cycles
+Signature 79 verified in 1328295 cycles
+Signature 80 verified in 1310898 cycles
+Signature 81 verified in 1302242 cycles
+Signature 82 verified in 1354338 cycles
+Signature 83 verified in 1432501 cycles
+Signature 84 verified in 1371724 cycles
+Signature 85 verified in 1328291 cycles
+Signature 86 verified in 1302229 cycles
+Signature 87 verified in 1354343 cycles
+Signature 88 verified in 1389092 cycles
+Signature 89 verified in 1423829 cycles
+Signature 90 verified in 1310919 cycles
+Signature 91 verified in 1310937 cycles
+Signature 92 verified in 1328285 cycles
+Signature 93 verified in 1302232 cycles
+Signature 94 verified in 1354335 cycles
+Signature 95 verified in 1406458 cycles
+Signature 96 verified in 1336982 cycles
+Signature 97 verified in 1336969 cycles
+Signature 98 verified in 1336995 cycles
+Signature 99 verified in 1345670 cycles
+Signature 100 verified in 1397783 cycles
+Signature 101 verified in 1441191 cycles
+Signature 102 verified in 1406468 cycles
+Signature 103 verified in 1328276 cycles
+Signature 104 verified in 1258811 cycles
+Signature 105 verified in 1310927 cycles
+Signature 106 verified in 1380405 cycles
+Signature 107 verified in 1406475 cycles
+Signature 108 verified in 1432523 cycles
+Signature 109 verified in 1441203 cycles
+Signature 110 verified in 1380410 cycles
+Signature 111 verified in 1371720 cycles
+Signature 112 verified in 1336995 cycles
+Signature 113 verified in 1328303 cycles
+Signature 114 verified in 1302246 cycles
+Signature 115 verified in 1336981 cycles
+Signature 116 verified in 1310928 cycles
+Signature 117 verified in 1319614 cycles
+Signature 118 verified in 1267495 cycles
+Signature 119 verified in 1345668 cycles
+Signature 120 verified in 1354347 cycles
+Signature 121 verified in 1336985 cycles
+Signature 122 verified in 1441199 cycles
+Signature 123 verified in 1363034 cycles
+Signature 124 verified in 1336984 cycles
+Signature 125 verified in 1258811 cycles
+Signature 126 verified in 1284850 cycles
+Signature 127 verified in 1293557 cycles
+Signature 128 verified in 1345664 cycles
+Signature 129 verified in 1363034 cycles
+Signature 130 verified in 1389107 cycles
+Signature 131 verified in 1380410 cycles
+Signature 132 verified in 1336990 cycles
+Signature 133 verified in 1328295 cycles
+Signature 134 verified in 1406480 cycles
+Signature 135 verified in 1328293 cycles
+Signature 136 verified in 1423827 cycles
+Signature 137 verified in 1423828 cycles
+Signature 138 verified in 1345667 cycles
+Signature 139 verified in 1363066 cycles
+Signature 140 verified in 1389118 cycles
+Signature 141 verified in 1302246 cycles
+Signature 142 verified in 1371721 cycles
+Signature 143 verified in 1389099 cycles
+Signature 144 verified in 1380407 cycles
+Signature 145 verified in 1310942 cycles
+Signature 146 verified in 1241434 cycles
+Signature 147 verified in 1336987 cycles
+Signature 148 verified in 1345674 cycles
+Signature 149 verified in 1284873 cycles
+Signature 150 verified in 1328286 cycles
+Signature 151 verified in 1284866 cycles
+Signature 152 verified in 1336986 cycles
+Signature 153 verified in 1345663 cycles
+Signature 154 verified in 1293557 cycles
+Signature 155 verified in 1354353 cycles
+Signature 156 verified in 1328302 cycles
+Signature 157 verified in 1380403 cycles
+Signature 158 verified in 1354344 cycles
+Signature 159 verified in 1449884 cycles
+Signature 160 verified in 1441209 cycles
+Signature 161 verified in 1363043 cycles
+Signature 162 verified in 1302258 cycles
+Signature 163 verified in 1345673 cycles
+Signature 164 verified in 1293550 cycles
+Signature 165 verified in 1354366 cycles
+Signature 166 verified in 1328289 cycles
+Signature 167 verified in 1371702 cycles
+Signature 168 verified in 1336983 cycles
+Signature 169 verified in 1406471 cycles
+Signature 170 verified in 1354347 cycles
+Signature 171 verified in 1354353 cycles
+Signature 172 verified in 1276185 cycles
+Signature 173 verified in 1336972 cycles
+Signature 174 verified in 1328301 cycles
+Signature 175 verified in 1328289 cycles
+Signature 176 verified in 1371710 cycles
+Signature 177 verified in 1380409 cycles
+Signature 178 verified in 1354364 cycles
+Signature 179 verified in 1310923 cycles
+Signature 180 verified in 1328284 cycles
+Signature 181 verified in 1328284 cycles
+Signature 182 verified in 1354339 cycles
+Signature 183 verified in 1310932 cycles
+Signature 184 verified in 1284871 cycles
+Signature 185 verified in 1267504 cycles
+Signature 186 verified in 1363030 cycles
+Signature 187 verified in 1415157 cycles
+Signature 188 verified in 1276190 cycles
+Signature 189 verified in 1302228 cycles
+Signature 190 verified in 1449886 cycles
+Signature 191 verified in 1423839 cycles
+Signature 192 verified in 1345668 cycles
+Signature 193 verified in 1389100 cycles
+Signature 194 verified in 1371719 cycles
+Signature 195 verified in 1302243 cycles
+Signature 196 verified in 1293547 cycles
+Signature 197 verified in 1380404 cycles
+Signature 198 verified in 1284881 cycles
+Signature 199 verified in 1371723 cycles
+Signature 200 verified in 1328297 cycles
+Signature 201 verified in 1397779 cycles
+Signature 202 verified in 1319612 cycles
+Signature 203 verified in 1345683 cycles
+Signature 204 verified in 1415145 cycles
+Signature 205 verified in 1415142 cycles
+Signature 206 verified in 1319605 cycles
+Signature 207 verified in 1354351 cycles
+Signature 208 verified in 1302239 cycles
+Signature 209 verified in 1415162 cycles
+Signature 210 verified in 1363039 cycles
+Signature 211 verified in 1397772 cycles
+Signature 212 verified in 1336998 cycles
+Signature 213 verified in 1371725 cycles
+Signature 214 verified in 1310906 cycles
+Signature 215 verified in 1371714 cycles
+Signature 216 verified in 1310930 cycles
+Signature 217 verified in 1449887 cycles
+Signature 218 verified in 1345660 cycles
+Signature 219 verified in 1293553 cycles
+Signature 220 verified in 1336989 cycles
+Signature 221 verified in 1345649 cycles
+Signature 222 verified in 1336975 cycles
+Signature 223 verified in 1415155 cycles
+Signature 224 verified in 1354350 cycles
+Signature 225 verified in 1389081 cycles
+Signature 226 verified in 1319629 cycles
+Signature 227 verified in 1363057 cycles
+Signature 228 verified in 1371712 cycles
+Signature 229 verified in 1371724 cycles
+Signature 230 verified in 1250121 cycles
+Signature 231 verified in 1397788 cycles
+Signature 232 verified in 1319612 cycles
+Signature 233 verified in 1293565 cycles
+Signature 234 verified in 1458567 cycles
+Signature 235 verified in 1458588 cycles
+Signature 236 verified in 1293566 cycles
+Signature 237 verified in 1284870 cycles
+Signature 238 verified in 1354354 cycles
+Signature 239 verified in 1302231 cycles
+Signature 240 verified in 1363043 cycles
+Signature 241 verified in 1284876 cycles
+Signature 242 verified in 1371726 cycles
+Signature 243 verified in 1363047 cycles
+Signature 244 verified in 1319622 cycles
+Signature 245 verified in 1363033 cycles
+Signature 246 verified in 1310909 cycles
+Signature 247 verified in 1302243 cycles
+Signature 248 verified in 1319607 cycles
+Signature 249 verified in 1354348 cycles
+Signature 250 verified in 1354359 cycles
+Signature 251 verified in 1415154 cycles
+Signature 252 verified in 1415147 cycles
+Signature 253 verified in 1397776 cycles
+Signature 254 verified in 1380404 cycles
+Signature 255 verified in 1406459 cycles
+Signature 256 verified in 1415141 cycles
+Signature 257 verified in 1345663 cycles
+Signature 258 verified in 1406477 cycles
+Signature 259 verified in 1337005 cycles
+Signature 260 verified in 1380403 cycles
+Signature 261 verified in 1293546 cycles
+Signature 262 verified in 1258819 cycles
+Signature 263 verified in 1441208 cycles
+Signature 264 verified in 1380396 cycles
+Signature 265 verified in 1319626 cycles
+Signature 266 verified in 1441200 cycles
+Signature 267 verified in 1371730 cycles
+Signature 268 verified in 1319608 cycles
+Signature 269 verified in 1449896 cycles
+Signature 270 verified in 1389102 cycles
+Signature 271 verified in 1371723 cycles
+Signature 272 verified in 1319605 cycles
+Signature 273 verified in 1363037 cycles
+Signature 274 verified in 1363054 cycles
+Signature 275 verified in 1336970 cycles
+Signature 276 verified in 1397780 cycles
+Signature 277 verified in 1423826 cycles
+Signature 278 verified in 1363030 cycles
+Signature 279 verified in 1284863 cycles
+Signature 280 verified in 1389093 cycles
+Signature 281 verified in 1354353 cycles
+Signature 282 verified in 1302240 cycles
+Signature 283 verified in 1397802 cycles
+Signature 284 verified in 1371736 cycles
+Signature 285 verified in 1406474 cycles
+Signature 286 verified in 1267490 cycles
+Signature 287 verified in 1310922 cycles
+Signature 288 verified in 1354354 cycles
+Signature 289 verified in 1319614 cycles
+Signature 290 verified in 1371730 cycles
+Signature 291 verified in 1467273 cycles
+Signature 292 verified in 1345653 cycles
+Signature 293 verified in 1423842 cycles
+Signature 294 verified in 1449906 cycles
+Signature 295 verified in 1397792 cycles
+Signature 296 verified in 1371723 cycles
+Signature 297 verified in 1345671 cycles
+Signature 298 verified in 1319622 cycles
+Signature 299 verified in 1380430 cycles
+Signature 300 verified in 1276184 cycles
+Signature 301 verified in 1250146 cycles
+Signature 302 verified in 1319613 cycles
+Signature 303 verified in 1432536 cycles
+Signature 304 verified in 1336992 cycles
+Signature 305 verified in 1397785 cycles
+Signature 306 verified in 1371723 cycles
+Signature 307 verified in 1319610 cycles
+Signature 308 verified in 1302241 cycles
+Signature 309 verified in 1250134 cycles
+Signature 310 verified in 1336967 cycles
+Signature 311 verified in 1397777 cycles
+Signature 312 verified in 1363038 cycles
+Signature 313 verified in 1354359 cycles
+Signature 314 verified in 1336969 cycles
+Signature 315 verified in 1415159 cycles
+Signature 316 verified in 1371716 cycles
+Signature 317 verified in 1276187 cycles
+Signature 318 verified in 1354359 cycles
+Signature 319 verified in 1258817 cycles
+Signature 320 verified in 1389095 cycles
+Signature 321 verified in 1336986 cycles
+Signature 322 verified in 1345675 cycles
+Signature 323 verified in 1380414 cycles
+Signature 324 verified in 1336969 cycles
+Signature 325 verified in 1328301 cycles
+Signature 326 verified in 1415150 cycles
+Signature 327 verified in 1336985 cycles
+Signature 328 verified in 1354351 cycles
+Signature 329 verified in 1397787 cycles
+Signature 330 verified in 1423822 cycles
+Signature 331 verified in 1354369 cycles
+Signature 332 verified in 1354356 cycles
+Signature 333 verified in 1354359 cycles
+Signature 334 verified in 1302247 cycles
+Signature 335 verified in 1406456 cycles
+Signature 336 verified in 1293552 cycles
+Signature 337 verified in 1284876 cycles
+Signature 338 verified in 1293553 cycles
+Signature 339 verified in 1389089 cycles
+Signature 340 verified in 1336998 cycles
+Signature 341 verified in 1389095 cycles
+Signature 342 verified in 1302223 cycles
+Signature 343 verified in 1336971 cycles
+Signature 344 verified in 1423850 cycles
+Signature 345 verified in 1336989 cycles
+Signature 346 verified in 1345670 cycles
+Signature 347 verified in 1276187 cycles
+Signature 348 verified in 1363051 cycles
+Signature 349 verified in 1319615 cycles
+Signature 350 verified in 1380407 cycles
+Signature 351 verified in 1354340 cycles
+Signature 352 verified in 1258817 cycles
+Signature 353 verified in 1345666 cycles
+Signature 354 verified in 1397791 cycles
+Signature 355 verified in 1380414 cycles
+Signature 356 verified in 1284882 cycles
+Signature 357 verified in 1432527 cycles
+Signature 358 verified in 1336981 cycles
+Signature 359 verified in 1258811 cycles
+Signature 360 verified in 1302239 cycles
+Signature 361 verified in 1380414 cycles
+Signature 362 verified in 1371720 cycles
+Signature 363 verified in 1371726 cycles
+Signature 364 verified in 1310936 cycles
+Signature 365 verified in 1328295 cycles
+Signature 366 verified in 1389088 cycles
+Signature 367 verified in 1380392 cycles
+Signature 368 verified in 1380394 cycles
+Signature 369 verified in 1432535 cycles
+Signature 370 verified in 1363029 cycles
+Signature 371 verified in 1371721 cycles
+Signature 372 verified in 1302226 cycles
+Signature 373 verified in 1328295 cycles
+Signature 374 verified in 1371708 cycles
+Signature 375 verified in 1310926 cycles
+Signature 376 verified in 1284867 cycles
+Signature 377 verified in 1423842 cycles
+Signature 378 verified in 1371715 cycles
+Signature 379 verified in 1363039 cycles
+Signature 380 verified in 1310930 cycles
+Signature 381 verified in 1336978 cycles
+Signature 382 verified in 1302214 cycles
+Signature 383 verified in 1371711 cycles
+Signature 384 verified in 1302239 cycles
+Signature 385 verified in 1371724 cycles
+Signature 386 verified in 1389093 cycles
+Signature 387 verified in 1389101 cycles
+Signature 388 verified in 1406464 cycles
+Signature 389 verified in 1397797 cycles
+Signature 390 verified in 1354366 cycles
+Signature 391 verified in 1302238 cycles
+Signature 392 verified in 1423822 cycles
+Signature 393 verified in 1319600 cycles
+Signature 394 verified in 1397776 cycles
+Signature 395 verified in 1371722 cycles
+Signature 396 verified in 1441199 cycles
+Signature 397 verified in 1328284 cycles
+Signature 398 verified in 1284872 cycles
+Signature 399 verified in 1371736 cycles
+Signature 400 verified in 1389084 cycles
+Signature 401 verified in 1319628 cycles
+Signature 402 verified in 1336987 cycles
+Signature 403 verified in 1345655 cycles
+Signature 404 verified in 1345684 cycles
+Signature 405 verified in 1310922 cycles
+Signature 406 verified in 1354322 cycles
+Signature 407 verified in 1354340 cycles
+Signature 408 verified in 1328305 cycles
+Signature 409 verified in 1363042 cycles
+Signature 410 verified in 1267494 cycles
+Signature 411 verified in 1310933 cycles
+Signature 412 verified in 1328304 cycles
+Signature 413 verified in 1389069 cycles
+Signature 414 verified in 1363028 cycles
+Signature 415 verified in 1302240 cycles
+Signature 416 verified in 1328302 cycles
+Signature 417 verified in 1380420 cycles
+Signature 418 verified in 1415170 cycles
+Signature 419 verified in 1293563 cycles
+Signature 420 verified in 1423843 cycles
+Signature 421 verified in 1363055 cycles
+Signature 422 verified in 1415158 cycles
+Signature 423 verified in 1371722 cycles
+Signature 424 verified in 1449903 cycles
+Signature 425 verified in 1371721 cycles
+Signature 426 verified in 1371717 cycles
+Signature 427 verified in 1345686 cycles
+Signature 428 verified in 1258808 cycles
+Signature 429 verified in 1319608 cycles
+Signature 430 verified in 1406480 cycles
+Signature 431 verified in 1415158 cycles
+Signature 432 verified in 1328279 cycles
+Signature 433 verified in 1380407 cycles
+Signature 434 verified in 1397787 cycles
+Signature 435 verified in 1354357 cycles
+Signature 436 verified in 1415145 cycles
+Signature 437 verified in 1415158 cycles
+Signature 438 verified in 1371720 cycles
+Signature 439 verified in 1276173 cycles
+Signature 440 verified in 1267518 cycles
+Signature 441 verified in 1467258 cycles
+Signature 442 verified in 1371716 cycles
+Signature 443 verified in 1302257 cycles
+Signature 444 verified in 1389102 cycles
+Signature 445 verified in 1302232 cycles
+Signature 446 verified in 1336978 cycles
+Signature 447 verified in 1363050 cycles
+Signature 448 verified in 1310937 cycles
+Signature 449 verified in 1371723 cycles
+Signature 450 verified in 1328298 cycles
+Signature 451 verified in 1319611 cycles
+Signature 452 verified in 1380395 cycles
+Signature 453 verified in 1389108 cycles
+Signature 454 verified in 1380417 cycles
+Signature 455 verified in 1241447 cycles
+Signature 456 verified in 1380412 cycles
+Signature 457 verified in 1293550 cycles
+Signature 458 verified in 1354351 cycles
+Signature 459 verified in 1336988 cycles
+Signature 460 verified in 1406470 cycles
+Signature 461 verified in 1345674 cycles
+Signature 462 verified in 1328297 cycles
+Signature 463 verified in 1328297 cycles
+Signature 464 verified in 1371722 cycles
+Signature 465 verified in 1406478 cycles
+Signature 466 verified in 1397778 cycles
+Signature 467 verified in 1328299 cycles
+Signature 468 verified in 1241442 cycles
+Signature 469 verified in 1319625 cycles
+Signature 470 verified in 1380397 cycles
+Signature 471 verified in 1310907 cycles
+Signature 472 verified in 1310938 cycles
+Signature 473 verified in 1389097 cycles
+Signature 474 verified in 1406473 cycles
+Signature 475 verified in 1328304 cycles
+Signature 476 verified in 1371735 cycles
+Signature 477 verified in 1389106 cycles
+Signature 478 verified in 1319615 cycles
+Signature 479 verified in 1336984 cycles
+Signature 480 verified in 1328308 cycles
+Signature 481 verified in 1310928 cycles
+Signature 482 verified in 1337000 cycles
+Signature 483 verified in 1328318 cycles
+Signature 484 verified in 1441201 cycles
+Signature 485 verified in 1441219 cycles
+Signature 486 verified in 1337000 cycles
+Signature 487 verified in 1380399 cycles
+Signature 488 verified in 1302237 cycles
+Signature 489 verified in 1423842 cycles
+Signature 490 verified in 1371717 cycles
+Signature 491 verified in 1345703 cycles
+Signature 492 verified in 1363053 cycles
+Signature 493 verified in 1380403 cycles
+Signature 494 verified in 1345682 cycles
+Signature 495 verified in 1345668 cycles
+Signature 496 verified in 1345663 cycles
+Signature 497 verified in 1389098 cycles
+Signature 498 verified in 1415146 cycles
+Signature 499 verified in 1415140 cycles
+Signature 500 verified in 1345679 cycles
+Signature 501 verified in 1336988 cycles
+Signature 502 verified in 1293539 cycles
+Signature 503 verified in 1319613 cycles
+Signature 504 verified in 1302241 cycles
+Signature 505 verified in 1258822 cycles
+Signature 506 verified in 1336971 cycles
+Signature 507 verified in 1336980 cycles
+Signature 508 verified in 1406467 cycles
+Signature 509 verified in 1284863 cycles
+Signature 510 verified in 1354336 cycles
+Signature 511 verified in 1380420 cycles
+Signature 512 verified in 1258815 cycles
+All 512 signatures verified. Total cycles: 1301498787, per signature: 2541989
+Proof time:  20m 3s
+Proof size:  464946 bytes (454.0 KiB)
+Proof file:  demo/proof.bin
+
+[5/5] $ verify -p proof.bin -k pubkeys.json -m generated.json -v
+PASS
+  Mode:        STARK proof verification
+  Signatures:  512
+  Proof size:  464946 bytes (454.0 KiB)
+  Verify time: 12.2ms
+
