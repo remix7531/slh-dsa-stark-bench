@@ -26,6 +26,8 @@
           extensions = [ "rust-src" "rust-analyzer" ];
         };
 
+        python = pkgs.python3.withPackages (ps: with ps; [ matplotlib ]);
+
         rustVersion = pkgs.lib.removePrefix "r0." pkgs.risc0-rust.version;
         arch = {
           x86_64-linux = "x86_64-unknown-linux-gnu";
@@ -45,6 +47,7 @@
             openssl.dev
             pkg-config
             protobuf
+            python
             r0vm
             risc0-rust
             riscv32-cc

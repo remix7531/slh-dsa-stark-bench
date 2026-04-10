@@ -53,15 +53,10 @@ Signatures can also be verified directly without a proof:
 
 ## Building
 
-Requires [Nix](https://nixos.org/download/) with flakes enabled.
+Requires [Nix](https://nixos.org/download/) with flakes enabled. For Ubuntu GPU machines without Nix, see [INSTALL-UBUNTU-GPU.md](INSTALL-UBUNTU-GPU.md).
 
 ```bash
 nix develop
-```
-
-Install the RISC Zero RISC-V toolchain (one-time):
-```bash
-cargo risczero install
 ```
 
 Build:
